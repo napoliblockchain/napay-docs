@@ -1,7 +1,7 @@
 # napay-docs
 Documentazione Modifiche Napay
 
-# 24.07.2019
+#### 24.07.2019
     - #279 : versioning da file di testo
     - #234 : Aggiunto alert scadenza napay.
     - In caso di rinnovo del pagamento, si aggiunge la differenza dei giorni di scadenza alla data
