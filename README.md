@@ -136,7 +136,7 @@ Documentazione Modifiche Napay
     #226 :inserire guida nelle notifiche,
     #227 :menu: links a wallet e pos
 
-####02.07.2019
+#### 02.07.2019
     [bugfix]
     #222 :user impostazioni gateway: non modificabile da utente! readonly!!
     #210 :help in linea,
@@ -145,7 +145,7 @@ Documentazione Modifiche Napay
     #216 :lista transazioni conto: adeguamento transazioni,
     #213 :grafico sui tipi di pagamento
 
-####01.07.2019
+#### 01.07.2019
     new README & LICENSE
 
     [issues]
@@ -234,7 +234,7 @@ Documentazione Modifiche Napay
     issue #178 : bagde su pulsante pagamenti
 
 
-####30.05.2019
+#### 30.05.2019
     [register user]
         - Fine
 
@@ -357,7 +357,7 @@ Documentazione Modifiche Napay
                 I. User riceve mail per effettuare il login
 
 
-####08.05.2019
+#### 08.05.2019
     [POS]
         - creazione del branch POS. Inizio estrazione POS. La cancellazione
             dei file, viene rimandata alla successiva fase di testing della
@@ -370,11 +370,11 @@ Documentazione Modifiche Napay
     [Transactions/token]
     - Nuova funzione di aggiornamento STATO Transazioni Tokens         
 
-####06.05.2019
+#### 06.05.2019
     [Site/Activate]
         - issue #168 : google 2fa nn funziona
 
-####03.05.2019
+#### 03.05.2019
     [Pagamento quota]
         - preparato ipn for Paypal
         - Paypal: inserite chiavi per "Produzione"
@@ -382,17 +382,17 @@ Documentazione Modifiche Napay
     [Merchant]    
         - bugfix 'nuovo indirizzo token'
 
-####02.05.2019
+#### 02.05.2019
     - issue #166 : register administrator - non visualizzare modulo cartaceo
     - issue #162 : nuovi controller SiteBackendController e SiteBehindController
     - validatore response getBalance Bitstamp
     - nuovo DATABASE VUOTO PER INSTALLAZIONE DA ZERO
 
-####04.04.2019 Paypal Integration
+#### 04.04.2019 Paypal Integration
     - added PayPal-PHP-SDK Library
     - set permission=0 a st_tipo_pagamenti 'Paypal', id_tipo_pagamento MUST BE (2)
 
-####01.04.2019
+#### 01.04.2019
     - google reCaptcha2 al posto del codice di conferma su tutti i Login
         - LOGIN
         - Register
@@ -405,15 +405,15 @@ Documentazione Modifiche Napay
     - ripristinato funzionamento Keypad Desktop
     - issue #145 : pos desktop e mobile hanno diversi controllers?
 
-####29.03.2019
+#### 29.03.2019
     - bugfix nuovo socio vede vecchie notifiche
     - bugfix User register form
     - issue #148 : wallet: da separare e accesso solo con two factor authentication
 
-####26.03.2019
+#### 26.03.2019
     - bugfix new wallet
 
-####25.03.2019
+#### 25.03.2019
     - issue #156 : cambio password NON CAMBIA PASSWORD
     - wallet balance error: cancello messaggio errore su nuova selezione wallet
     - exporta Tokens Excel
@@ -425,11 +425,11 @@ Documentazione Modifiche Napay
     - issue #150 : quote: segretario non puÃ² modificare nÃ© cancellare la quota
     - segretario non puÃ² modificare impostazioni webapp
 
-####22.03.2019
+#### 22.03.2019
     - wallet eth e token SEND + ipn
     - Esporta Transazioni in excel
 
-####21.03.2019
+#### 21.03.2019
     - NUOVA GESTIONE ETH E TOKENS : modificata tabella np_tokens aggiunto campo
         type, per gestire ether o token
         modificati gli inserimenti in type_notifications nelle notifiche
@@ -445,7 +445,7 @@ Documentazione Modifiche Napay
     - modificati i Command token e wallet in Receive e Send
     - issue #152 : quote: icona pdf +piccola                            
 
-####19.03.2019
+#### 19.03.2019
     - FATTURE: cosÃ¬ come sono concepite servono all'Associazione a fatturare
     gli importi (in percentuale) sulle transazioni dei clienti.
     L'Associazione genera le fatture selezionando le transazioni desiderate e il
@@ -458,13 +458,13 @@ Documentazione Modifiche Napay
     caso di pagamenti cash, altrimenti Ã¨ il sistema stesso che la genera (ad esempio
     dopo un pagamento in bitcoin). Queste ricevute sono esenti da imposte.
 
-####18.03.2019
+#### 18.03.2019
     - issue #149 : wallet btc - velocizzare accesso
     - 2fa google auth - cambiare tabella np_users (aggiungere ga_secret_key)
     - completato in settings utenti creazione e rimozione 2fa
     - bugfix nuovo socio
 
-####14.03.2019 - 15.03
+#### 14.03.2019 - 15.03
     - wallet token: separazione funzioni eth_ erc20_
     - ERC20_Token.php modifica x funzionare in ufficio (decimals, 2);
     - lavorazione ERC20 ...
@@ -472,18 +472,18 @@ Documentazione Modifiche Napay
     - issue #146 - update.sh
     - issue #147 : nuova libreria
 
-####11.03.2019
+#### 11.03.2019
     - issue #144 : aggiunto poa_abi e poa_bytecode per lo smart contract del token
     - inserito modello cartaceo ISCRIZIONE SOCIO
 
-####07.03.2019
+#### 07.03.2019
     - issue 139 : wallet token: funzione di controllo sull'indirizzo inserito
     - nuovi settings GDPR per Associazione
     - informativa sulla privacy secondo GDPR
     - stampa Informativa e consenso trattamento dati personali
     - issue #136 : Informativa sui cookies Cookie law
 
-####06.03.2019 [persona-giuridica]
+#### 06.03.2019 [persona-giuridica]
     E' necessario modificare la tabella np_users con diversi campi...
     1. persona_giuridica (si/no) 1/0
     7. denominazione: varchar (250)
@@ -496,12 +496,12 @@ Documentazione Modifiche Napay
     - Settings webapp: quota d'iscrizione differenziata per Privato o societÃ (persona fisica/giuridica)
     - issue #135 : impostata Ricevuta per iscrizione socio
 
-####06.03.2019
+#### 06.03.2019
     - issue #134 : Script configurazione
     - issue #138 : settings user : banca, cambiare colore ad avviso
     - riorganizzato immagini in main.php
 
-####05.03.2019
+#### 05.03.2019
     - aggiunto in impostazioni webapp smart_contract
     - issue #131 : Favicon associazione
     - issue #130 : Impostazioni visualizzare IBAN
@@ -509,12 +509,12 @@ Documentazione Modifiche Napay
     - issue #125 : Lista fatture solo se presente % associazione
     - issue #127 : Lista pagamenti - stampa ricevuta
 
-####04.03.2019
+#### 04.03.2019
     - issue #133 : Orologio con nuovo tema Ã¨ disallineato
     - pagamenti quota. lista differenziata se utente o amministratore! (aggiunto campo in st_tipo_pagamenti, permission (int 11))
     - issue #132 : Email su pagamento quota associativa
 
-####02.03.2019
+#### 02.03.2019
   - issue #116 : nuovo commerciante, Nel caso in cui non ci sono utenti soci selezionare esce errore costituenti
   - issue #117 : nuova associazione, Deve selezionare solo gli utenti soci. Fare attenzione All'errore se mancano utenti soci
   - issue #118 : modifica negozio, Nn esce il menÃ¹ a tendina su cittÃ 
@@ -526,7 +526,7 @@ Documentazione Modifiche Napay
   - issue #126 : Merchant Ã¨ anche socio, mostrata la lista dei pagamenti x l'iscrizione.
   - issue #128 : nuovo negozio, cittÃ  numerico
 
-####01.03.2019
+#### 01.03.2019
     - issue #114 : keypad logo va su dash
     - cambio tema con lumen.css + configurazione nuovi colori!
     - issue #115 : logo npay troppo lungo
@@ -534,15 +534,15 @@ Documentazione Modifiche Napay
     - issue #112 : ipn full
     - issue #7 : DECIMALI TOKEN: Dipende dalla POA o dal pos ?
 
-####28.02.2019
+#### 28.02.2019
     - nuovo LOGO Associazione Napoli Blockchain e N-Pay
 
-####27.02.2019
+#### 27.02.2019
     - Socio: visualizzazione propri pagamenti. Creazione commerciante.
     - Pagina login con pulsanti a scomparsa!
     - issue #110 : LOGIN SOCIO: CONCLUSO!
 
-####26.02.2019
+#### 26.02.2019
     - issue #108 : Lista notifiche esce confirmed. Aggiornare funzione
     - modificata visualizzazione testo su dashboard con diverse risoluzioni
     - cambiate icone menu utente
@@ -556,19 +556,19 @@ Documentazione Modifiche Napay
     - Administrator non cambia password, bensÃ¬ invia un reset link all'utente    
     - Socio: gestione e creazione Commerciante...
 
-####25.02.2019
+#### 25.02.2019
     - issue #111 : Utente/commerciante settings token separato in pulsante
     - issue #103 : merchant user impostazioni: non salva il wallet principale!!!
     - issue #104 : Admin puÃ² cambiare la carica dell'utente
     - issue #106 : Nuova fattura importo. Al posto di prezzo
     - issue #107 : Nuova fattura inserisci. Il campo city Ã¨ numerico. Anche nel pdf
 
-####20.02.2019
+#### 20.02.2019
     - keypad new font & layout changes
     - keypad shopping: nascosti impostazioni utente! visibile solo logout
     - keypad shopping: schermata modal dopo pressione tasto "Conferma" acquisto
 
-####18.02.2019
+#### 18.02.2019
     - issue #102 : grafici separati token e btc
     - issue #101 : errore onlyforbitstamp liquidation address
     - issue #100 : versioning software obbligatorio
@@ -583,7 +583,7 @@ Documentazione Modifiche Napay
             6. quando ritorno su webpos/keypad?id=id_transaction verifico che sia stata effettivamente
                 pagata. In tal caso stampo la ricevuta.
 
-####16.02.2019
+#### 16.02.2019
     - issue #98 : grafico pos step errato
     - issue #97 : Settings visualizza valido!!! ;-)
     - wallet btc - confirm cambiato colori
@@ -595,11 +595,11 @@ Documentazione Modifiche Napay
     - settings account commerciante anche per commerciante e nn solo per administrators
     - issue #94 : Lista commercianti: attivo deve far riferimento ai pagamenti e nn all'account
 
-####15.02.2019
+#### 15.02.2019
     - layout sin pos
     - new electrum Class
 
-####11.02.2019
+#### 11.02.2019
     - creazione docker electrum versione 3.3.3
         git clone https://github.com/osminogin/docker-electrum-daemon.git
         cd docker-electrum-daemon
@@ -610,7 +610,7 @@ Documentazione Modifiche Napay
         //QUESTO Ã¨ IL COMANDO CHE VA IN DockerController.php
         docker run --rm --name electrum-iduser[xy] --publish 127.0.0.1:70xy:70xy --volume /srv/electrum:/data  _[ngatepay/electrum:latest]_
 
-####08.02.2019 v1.2.14
+#### 08.02.2019 v1.2.14
     - [//rimossi  e rimessi dati bancari da user settings]
     - bugfix Salvataggio Usersettings in Merchants
     - creata classe Electrum per unificare i comandi docker
@@ -652,23 +652,23 @@ Documentazione Modifiche Napay
     resta da verificare la tx e il broadcast della tx con electrum...
     serve un wallet collegato ad internet !!!!!!!!!!!!!!!!!!!
 
-####07.02.2019 v1.2.13
+#### 07.02.2019 v1.2.13
     - settings: dati bancari x trasferimento su proprio conto corrente
     - unificato dati country con nuova funzione in merchants, stores , banks
     - visualizza indirizzi in configurazione wallet merchant
     - wallet btc - invio btc...
 
-####06.02.2019 v1.2.12
+#### 06.02.2019 v1.2.12
     - #83 : settings utenti: trasforma come SettingsWebapp
     - password regenerate
     - wallet btc
     - send mail
 
-####05.02.2019 v1.2.11
+#### 05.02.2019 v1.2.11
     - creata visualizzazione transaction su conto exchange
     - gestione wallet btc->cambio su exchange
 
-####04.02.2019 v1.2.10
+#### 04.02.2019 v1.2.10
     - Gestione Impostazioni webapp a step
     - issue #84 : settings webapp: distinguere 2 btcpayserver(1 x associazione l'altro x l'utente)
     - issue #86 : settings wallet bitcoin user spostati in settings webapp
@@ -682,14 +682,14 @@ Documentazione Modifiche Napay
     - issue #89 : notifiche. token da keypad si aggiorna status ma non riceve notifica             
     - issue #88 : nuova mail ngatepay, configurata pwd per accesso da app. configurato main.php
 
-####01.02.2019 v1.2.9 - Master Public Key - Wallet bitcoin
+#### 01.02.2019 v1.2.9 - Master Public Key - Wallet bitcoin
     - Gestione/Creazione Wallet Bitcoin personalizzato per Merchant. Questa funzione
         crea l'immagine docker personalizzata per utente, crea il wallet electrum,
         visualizza il seed, attiva il wallet, visualizza la Master Public Key.
     - Creata nuova tabella docker_wallets
     - Necessario installazione tmux (apt-get install tmux)
 
-####31.01.2019 v1.2.8
+#### 31.01.2019 v1.2.8
     - registrato nuovo ipn per btcpayserver e pagamenti
     - nuovo login per utente non pagante
     - creata funzione Contatti per invio yiiMail
