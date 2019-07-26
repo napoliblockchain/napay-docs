@@ -9,7 +9,7 @@ del Wallet TTS e del POS
 [Ultimi aggiornamenti](docs/aggiornamenti.md)
 
 
-[Manuale utente Napay](docs/NAPAY-USERMANUAL.md)
+[Manuale utente Napay](docs/NAPAYMANUAL.md)
 
 
 [Manuale Wallet TTS](docs/WALLETMANUAL.md)
