@@ -9,13 +9,9 @@
 L’applicazione ha ~~6~~ **5** diversi profili utente con privilegi differenti. 
 
 - *Amministratore*
-
 - ~~*Associazione di categoria*~~
-
 - *Commerciante* 
-
 - *Socio*
-
 - *POS (profilo associato al commerciante)*
 - *WALLET (profilo associato al commerciante)*
 
@@ -51,4 +47,21 @@ I profili di amministrazione non possono essere legati in nessun caso a quelli o
 I profili di amministrazione sono esentati dal versamento della quota di iscrizione. 
 
 Gli altri 4 profili, dovranno ottenere l'approvazione da parte dell'Amministratore. I soci dovranno effettuare il pagamento della quota associativa in bitcoin o altra forma di pagamento. L'amministratore può anche rifiutare di approvare un nuovo iscritto, con la dovuta motivazione. 
+
+
+## Amministrazione
+Nel menù Amministrazione sono presenti le azioni operative per i soci
+
+### Soci
+Gestisce la lista dei soci. Si possono filtrare per 
+-  `Attivi` : sono tutti i soci in regola con i pagamenti
+-  `In scadenza` : filtro per i soci la cui iscrizione scade entro i seguenti 45 giorni
+-  `Scaduti` : filtro per i soci la cui iscrizione è scaduta. Restano in questo filtro fino ad un massimo di 365 giorni
+
+### Richieste di iscrizione
+Gestisce le nuove richieste di iscrizione all'Associazione. L'amministratore può accettare o rifiutare la richiesta. Il rifiuto deve essere motivato.
+
+### Promemoria 
+Gestisce gli invii di un avviso via mail agli associati la cui iscrizione è in scadenza.
+
 
