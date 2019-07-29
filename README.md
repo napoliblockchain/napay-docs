@@ -14,8 +14,11 @@
 
 ##### Manuali
 
-[Manuale utente Napay](docs/NAPAYMANUAL.md)
+[Manuale socio Napay](docs/NAPAYMANUAL.md)
 
 [Manuale Wallet TTS](docs/WALLETMANUAL.md)
 
 [Manuale POS](docs/POSMANUAL.md)
+
+[Manuale dell'Amministratore](docs/ADMINMANUAL.md)
+
