@@ -2,7 +2,7 @@
 
 #### PWA - v. 0.4
 
-![Screenshot of Napay TTS PWA app](images\screenshot-wallet.png)
+![Screenshot of Napay TTS PWA app](images/screenshot-wallet.png)
 
 
 
@@ -54,19 +54,3 @@
 - [x] Google 2FA Login
 - [x] Seed management with recovery wallet
 - [x] BIP32 passphrase
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

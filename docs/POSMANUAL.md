@@ -20,7 +20,7 @@ Made with ❤️ by [Sergio Casizzone](https://sergiocasizzone.it)
 - [x] Bitcoin (Lightning) & Token receive
 - [x] Print receipts
 
-​	
+​
 
 **PWA**
 
@@ -36,11 +36,11 @@ Made with ❤️ by [Sergio Casizzone](https://sergiocasizzone.it)
 
 Il POS o Point of Sale (Punto di vendita) è il software con cui il commerciante effettua le vendite al dettaglio. Può essere utilizzato da tutti i dispositivi mobili, smartphone, tablet ed anche da Pc Desktop.
 
-Per comodità di trasporto, si consiglia l’uso di uno smartphone. Se invece si dispone di un PC Desktop nel proprio negozio, può essere consigliabile l’utilizzo della versione desktop. **L’utente non deve impostare assolutamente nulla, è il software che cambia visualizzazione in base al tipo di dispositivo utilizzato.** 
+Per comodità di trasporto, si consiglia l’uso di uno smartphone. Se invece si dispone di un PC Desktop nel proprio negozio, può essere consigliabile l’utilizzo della versione desktop. **L’utente non deve impostare assolutamente nulla, è il software che cambia visualizzazione in base al tipo di dispositivo utilizzato.**
 
 
 
-Per accedere, basta cliccare sul pulsante **POS** visibile nel widget di Napay, oppure digitare direttamente l'URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it) nella barra degli indirizzi del browser. 
+Per accedere, basta cliccare sul pulsante **POS** visibile nel widget di Napay, oppure digitare direttamente l'URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it) nella barra degli indirizzi del browser.
 
 Nella pagina di *Login* inserire il codice identificativo **SIN**.
 
@@ -48,7 +48,7 @@ Nella pagina di *Login* inserire il codice identificativo **SIN**.
 
 ## **Keypad**
 
-Il Keypad (tastierino numerico), come quello visualizzato nell’immagine sopra, è lo strumento con il quale inseriremo i corrispettivi per la vendita. 
+Il Keypad (tastierino numerico), come quello visualizzato nell’immagine sopra, è lo strumento con il quale inseriremo i corrispettivi per la vendita.
 
 Vengono mostrati, per facilità d’uso, il prezzo del bitcoin in euro e la conversione in bitcoin dell’importo della eventuale transazione in bitcoin.
 
@@ -60,5 +60,4 @@ I pulsanti **Bitcoin**  e **Token** contraddistinguono l’acquisizione delle cr
 
 Se si accede con un dispositivo desktop o con un iPad al posto del tastierino numerico il software visualizzerà la schermata seguente attraverso la quale sarà possibile cliccare direttamente sul singolo prodotto scelto, suddiviso per categoria merceologica.
 
-![Shopping cart](images\shopping-cart.png)
-
+![Shopping cart](images/shopping-cart.png)
