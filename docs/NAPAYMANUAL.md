@@ -11,7 +11,7 @@ Made with :heart: ​by [Sergio Casizzone](https://sergiocasizzone.it)
 
 
 
-![Screenshot of Napay PWA app](images\screenshot-napay.png)
+![Screenshot of Napay PWA app](images/screenshot-napay.png)
 
 
 
@@ -44,7 +44,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 1. Il commerciante che vuole diventare socio deve iscriversi attraverso il form di registrazione presente sul sito inserendo le informazioni necessarie richieste per la registrazione dell’utenza.
 
-   Con l’iscrizione, l’utente: 
+   Con l’iscrizione, l’utente:
 
    - conferma di aver letto lo ***Statuto***;
 
@@ -67,7 +67,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 ## Paga Quota Iscrizione
 
 1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo lo Statuto dell'Associazione.
-2. Il pagamento può avvenire tramite transazione in 
+2. Il pagamento può avvenire tramite transazione in
    - Bitcoin
    - Paypal
 3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura per un anno a partire dalla data di registrazione dell'operazione.
@@ -78,7 +78,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 #### Creazione Negozio
 
-1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta semplicemente indicare la denominazione, se l'indirizzo combacia con quello inserito in fase di registrazione. Se invece gli indirizzi sono diversi, modificarli e poi confermare il salvataggio. 
+1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta semplicemente indicare la denominazione, se l'indirizzo combacia con quello inserito in fase di registrazione. Se invece gli indirizzi sono diversi, modificarli e poi confermare il salvataggio.
 
 #### Attivazione POS
 
@@ -91,7 +91,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 ## Abilitazione Ricezione Token TTS
 
-Per ricevere il token TTS, bisogna prima di tutto accedere al wallet tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it/?r=wallet/index) nella barra degli indirizzi del browser dello smartphone. 
+Per ricevere il token TTS, bisogna prima di tutto accedere al wallet tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it/?r=wallet/index) nella barra degli indirizzi del browser dello smartphone.
 
 Effettuare il login con le credenziali di accesso all'applicazione **Napay**. Se abbiamo abilitato la **Sicurezza a 2 Fattori per il Wallet TTS** nelle impostazioni utente, ci verrà richiesto anche il codice di controllo per proseguire.
 
@@ -101,21 +101,14 @@ Scegliere se generare un nuovo wallet o ripristinarne uno creato precedentemente
 
 ## Utilizzo del POS
 
-Collegarsi tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it/?r=site/login) nella barra degli indirizzi del browser dello smartphone. 
+Collegarsi tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it/?r=site/login) nella barra degli indirizzi del browser dello smartphone.
 
 Il codice SIN che viene richiesto è il codice che è stato generato in fase di attivazione del POS e che è stato inviato anche sulla mail del commerciante. Possiamo recuperare questo codice anche all'interno dell'applicazione **Napay**, selezionando `POS` nel menù `"Gestione Applicazione"`.
 
-Una volta effettuato il login avremo la schermata seguente: 
+Una volta effettuato il login avremo la schermata seguente:
 
-![POS screenshot](images\screenshot-pos.png)
+![POS screenshot](images/screenshot-pos.png)
 
 
 
 Inseriamo l'importo da richiedere e clicchiamo su **"bitcoin"** se vogliamo essere pagati in cryptovaluta, altrimenti clicchiamo su **"token"** se vogliamo ricevere il **Token TTS**.
-
-   
-
-   
-
-
-
