@@ -35,7 +35,7 @@ Made with :heart: ​by [Sergio Casizzone](https://sergiocasizzone.it)
 
 [Utilizzo del POS](#utilizzo-del-pos)
 
-[Dashboard](#daschboard)
+[Dashboard](#dashboard)
 
 ​		[Header](#header)
 
@@ -49,7 +49,7 @@ Made with :heart: ​by [Sergio Casizzone](https://sergiocasizzone.it)
 
 ​				Impostazioni
 
-[Gestione Pagamenti](#gestione-pagtamenti)
+[Gestione Pagamenti](#gestione-pagamenti)
 
 ​		[Transazioni](#transazioni)
 
@@ -123,11 +123,11 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 ## Paga Quota Iscrizione
 
-1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo lo Statuto dell'Associazione.
+1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita presente sulla pagina di login dell'applicazione. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo lo Statuto dell'Associazione.
 2. Il pagamento può avvenire tramite transazione in
    - Bitcoin
    - Paypal
-3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura per un anno a partire dalla data di registrazione dell'operazione.
+3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura per un anno a partire dalla data di registrazione dell'operazione. Nel caso di pagamento effettuato prima della scadenza naturale, l'anno di validità viene aggiunto alla data di scadenza, non a quella in cui viene effettuata l'operazione.
 
 
 
@@ -135,14 +135,14 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 ### Creazione Negozio
 
-1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta semplicemente indicare la denominazione, se l'indirizzo combacia con quello inserito in fase di registrazione. Se invece gli indirizzi sono diversi, modificarli e poi confermare il salvataggio.
+1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta semplicemente indicare la denominazione, se l'indirizzo della sede del negozio combacia con quello inserito in fase di registrazione. Se invece gli indirizzi sono diversi, modificarli e poi confermare il salvataggio.
 
 ### Attivazione POS
 
 1. Appena creato il Negozio, il software richiede se si vuole abilitare il POS. Ovviamente clicchiamo sul pulsante `Nuovo POS` e inseriamo:
-   -  la descrizione per identificarlo secondo l'organizzazione interna *(es. POS principale, POS piano terra, POS reparto 1, ecc…)*;
-2. La **Master Public Key (MPK)** del Wallet bitcoin. Se non si conosce il metodo di estrazione della MPK da un wallet, seguire la guida a questo link: [Guida estrazione MPK](https://napoliblockchain.it/esportare-la-chiave-pubblica-mpk-dal-wallet-coinomi/)
-3. Dopo aver salvato queste informazioni, cliccare sul pulsante `Attiva POS`. Al termine di questa operazione, verranno mostrati 10 indirizzi bitcoin generati dall'applicazione web utilizzando la MPK dell'utente. Verificare la corrispondenza degli indirizzi generati con quelli presenti sul proprio wallet per **certificare** la corretta abilitazione del POS.
+   -  la descrizione del POS per identificarlo secondo l'organizzazione interna *(es. POS principale, POS piano terra, POS reparto 1, ecc…)*;
+   -  la **Master Public Key (MPK)** del Wallet bitcoin. Se non si conosce il metodo di estrazione della MPK da un wallet, seguire la guida a questo link: [Guida estrazione MPK](https://napoliblockchain.it/esportare-la-chiave-pubblica-mpk-dal-wallet-coinomi/)
+2. Dopo aver salvato queste informazioni, cliccare sul pulsante `Attiva POS`. Al termine di questa operazione, verranno mostrati 10 indirizzi bitcoin generati dall'applicazione web utilizzando la MPK dell'utente. Verificare che gli indirizzi generati corrispondano con quelli presenti sul proprio wallet per **certificare** la corretta abilitazione del POS.
 
 
 
@@ -212,8 +212,8 @@ Sulla dashboard visualizziamo:
 
   Visualizza le impostazioni e ne permette la modifica. In particolare è possibile:
 
-  - Inserire le chiavi API dell'exchange di riferimento
-  - Inserire i propri dati Bancari
+  - Inserire le chiavi API dell'exchange di riferimento. 
+  - Inserire i propri dati Bancari. Devono corrispondere a quelli inseriti sull'azione per poter ricevere euro dalla compravendita dei bitcoin.
 
 
 
@@ -227,7 +227,7 @@ Con `“Lista transazioni”` è possibile visualizzare la lista di tutte le tra
 
 Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione. 
 
-E' possibile stampare la lista delle transazioni oppure estarle in formato Excel.
+E' possibile stampare la lista delle transazioni oppure estrarle in formato Excel.
 
 ### Transazioni Token
 
@@ -236,7 +236,7 @@ sia tramite POS che dal Wallet e lo stato in cui si trovano. Cliccando sulla sin
 
 Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione. 
 
-E' possibile stampare la lista delle transazioni oppure estarle in formato Excel.
+E' possibile stampare la lista delle transazioni oppure estrarle in formato Excel.
 
 ### Notifiche
 
@@ -268,7 +268,7 @@ In questo menù vengono gestiti i prodotti che il commerciante vuole visualizzar
 
 ### Categorie
 
-Si possono creare tante *categorie* diverse di prodotti e associarle a ciascun **negozio**. Ogni **negozio** può avere la propria *categoria* merceologica.
+Si possono creare tante *categorie* diverse di prodotti e associarle a ciascun **negozio**. Ogni **negozio** può avere le proprie *categorie* merceologiche.
 
 ### Prodotti
 
@@ -280,11 +280,11 @@ Si inseriscono i prezzi e le immagini dei *prodotti* da associare alla singola c
 
 ### Quote associative
 
-Lista dei versamenti effettuati all’Associazione. E' possibile stampare la lista, estarre un file Excel, scaricare la ricevuta del pagamento.
+Lista dei versamenti effettuati all’Associazione. E' possibile stampare la lista, estrarre un file Excel, scaricare la ricevuta del pagamento.
 
 ### Verbali
 
-Lista dei verbali di incontro dell'Associazione. Eè possibile visualizzare il contenuto dei verbali di incontro dell'Associazione.
+Lista dei verbali dell'Associazione. E' possibile visualizzare il contenuto dei verbali di incontro dell'Associazione.
 
 Il compito di caricare i verbali è affidato al socio con la carica di Segretario.
 
