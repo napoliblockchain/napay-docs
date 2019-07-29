@@ -1,13 +1,18 @@
 # Documentazione Napay
 
-Informazioni utili per l'utilizzo della webapp Napay
-del Wallet TTS e del POS
+### Informazioni utili per l'utilizzo della webapp Napay, del Wallet TTS e del POS
 
-[Ultimi aggiornamenti Napay](docs/aggiornamenti.md)
 
-[Ultimi aggiornamenti POS](docs/updates-pos.md)
 
-[Ultimi aggiornamenti Wallet TTS](docs/updates-wallet.md)
+##### Ultimi aggiornamenti
+
+- [Napay](docs/updates-napay.md)
+- [POS](docs/updates-pos.md)
+- [Wallet TTS](docs/updates-wallet.md)
+
+
+
+##### Manuali
 
 [Manuale utente Napay](docs/NAPAYMANUAL.md)
 
