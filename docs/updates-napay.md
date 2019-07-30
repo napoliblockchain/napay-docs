@@ -1,5 +1,7 @@
-# Aggiornamenti 
+# Aggiornamenti
 
+#### 30.07.2017
+    - #282 : lista pagamenti per singolo socio non filtra!
 
 #### 24.07.2019
     - #279 : versioning da file di testo
@@ -22,7 +24,7 @@
     - #272 : paga quota: sostituire cgridview con clistview per mostra solo ultimo pagamento valido + pulsante download ricevuta
     - #272 : fix aggiornamento con F5 della pagina, aumentava il numero della ricevuta +1 !!!
     - #260 : Pagamento quota, tasto logout
-    - #232 : Ricerca Provincia da CAP 
+    - #232 : Ricerca Provincia da CAP
     - #263 : idstore e sin creano confusione
     - #264 : notifiche: icona $ diventa btc
     - #267 : notify scaduto check esclamation mark
@@ -517,7 +519,7 @@
 #### 02.03.2019
   - issue #116 : nuovo commerciante, Nel caso in cui non ci sono utenti soci selezionare esce errore costituenti
   - issue #117 : nuova associazione, Deve selezionare solo gli utenti soci. Fare attenzione All'errore se mancano utenti soci
-  - issue #118 : modifica negozio, Nn esce il menÃ¹ a tendina su cittÃ 
+  - issue #118 : modifica negozio, Nn esce il menÃ¹ a tendina su cittÃ
   - risolto bug visualizzazione cittÃ  su associazione in presenza di NO ASSOCIAZIONE con valori non impostati
   - issue #119 : Socio type 5, Il menÃ¹ Ã¨ tutto sballato. Probabile che funzioni x desktop ma x mobile nn l'ho corretto
   - issue #121 : Lo user non diventa merchant (2) ma resta socio(5)
@@ -697,5 +699,3 @@
     - riorganizzate cartelle x activate, contact, homepage, pagaiscrizione, about, recoverypassword, register
     - modificata visualizzazione Registrazione, Activate,
     - preparato documento di presentazione NaPay
-
-

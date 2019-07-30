@@ -39,15 +39,15 @@ Made with :heart: ​by [Sergio Casizzone](https://sergiocasizzone.it)
 
 ​		[Header](#header)
 
-​				Widget
+​				[Widget](#widget)
 
-​				Notifiche
+​				[Notifiche](#notifiche)
 
-​				Account Utente
+​				[Account Utente](#account-utente)
 
-​				Account commerciante
+​				[Account commerciante](#account-commerciante)
 
-​				Impostazioni
+​				[Impostazioni](#impostazioni)
 
 [Gestione Pagamenti](#gestione-pagamenti)
 
@@ -115,7 +115,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
      > [^]: I ***termini e le condizioni di utilizzo del POS*** riguardano **esclusivamente** i commercianti. Per i soci semplici, quest'autorizzazione non è richiesta.
 
-2. L'iscrizione è subordinata all'accettazione da parte dei soci amministratori
+2. L'iscrizione è subordinata all'accettazione da parte del Consiglio Direttivo che ne ratifica l'ammissione in sede di assemblea (art. 3, c. 3 dello Statuto)
 
 3. Una volta approvata l'iscrizione, il socio, se non ha già provveduto al pagamento della quota associativa, provvederà al pagamento della stessa tramite la sezione `Paga Quota Iscrizione`
 
@@ -123,11 +123,13 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 ## Paga Quota Iscrizione
 
-1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita presente sulla pagina di login dell'applicazione. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo lo Statuto dell'Associazione.
+1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita presente sulla pagina di login dell'applicazione. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo il Regolamento interno dell'Associazione.
+
 2. Il pagamento può avvenire tramite transazione in
    - Bitcoin
    - Paypal
-3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura per un anno a partire dalla data di registrazione dell'operazione. Nel caso di pagamento effettuato prima della scadenza naturale, l'anno di validità viene aggiunto alla data di scadenza, non a quella in cui viene effettuata l'operazione.
+
+3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura per un anno a partire dalla data di registrazione dell'operazione. Nel caso di pagamento effettuato prima della scadenza naturale, l'anno di validità viene aggiunto alla data di scadenza effettiva, non a quella in cui viene effettuata l'operazione.
 
 
 
@@ -135,11 +137,13 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 ### Creazione Negozio
 
-1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta semplicemente indicare la denominazione, se l'indirizzo della sede del negozio combacia con quello inserito in fase di registrazione. Se invece gli indirizzi sono diversi, modificarli e poi confermare il salvataggio.
+1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta seguire queste regole:
+    a. Se l'indirizzo della sede del negozio combacia con quello inserito in fase di registrazione, inserire solo la denominazione del Negozio e salvare;
+    b. Se invece gli indirizzi sono diversi (ad es. sede legale e sede operativa differenti), inserire il nuovo indirizzo, quindi confermare il salvataggio.
 
 ### Attivazione POS
 
-1. Appena creato il Negozio, il software richiede se si vuole abilitare il POS. Ovviamente clicchiamo sul pulsante `Nuovo POS` e inseriamo:
+1. Appena creato il Negozio, il software ci informa se si vuole abilitare il POS. Clicchiamo sul pulsante `Nuovo POS` e inseriamo:
    -  la descrizione del POS per identificarlo secondo l'organizzazione interna *(es. POS principale, POS piano terra, POS reparto 1, ecc…)*;
    -  la **Master Public Key (MPK)** del Wallet bitcoin. Se non si conosce il metodo di estrazione della MPK da un wallet, seguire la guida a questo link: [Guida estrazione MPK](https://napoliblockchain.it/esportare-la-chiave-pubblica-mpk-dal-wallet-coinomi/)
 2. Dopo aver salvato queste informazioni, cliccare sul pulsante `Attiva POS`. Al termine di questa operazione, verranno mostrati 10 indirizzi bitcoin generati dall'applicazione web utilizzando la MPK dell'utente. Verificare che gli indirizzi generati corrispondano con quelli presenti sul proprio wallet per **certificare** la corretta abilitazione del POS.
@@ -148,27 +152,27 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 ## Abilitazione Ricezione Token TTS
 
-Per ricevere il token TTS, bisogna prima di tutto accedere al wallet tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it/?r=wallet/index) nella barra degli indirizzi del browser dello smartphone.
+1. Per ricevere il token TTS, bisogna prima di tutto accedere al wallet tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it/?r=wallet/index) nella barra degli indirizzi del browser dello smartphone.
 
-Effettuare il login con le credenziali di accesso all'applicazione **Napay**. Se abbiamo abilitato la **Sicurezza a 2 Fattori per il Wallet TTS** nelle impostazioni utente, ci verrà richiesto anche il codice di controllo per proseguire.
+2. Effettuare il login con le credenziali di accesso all'applicazione **Napay**. Se abbiamo abilitato la **Sicurezza a 2 Fattori per il Wallet TTS** nelle impostazioni utente, ci verrà richiesto anche il codice di controllo per proseguire.
 
-Scegliere se generare un nuovo wallet o ripristinarne uno creato precedentemente. Se la scelta è quella di generare un nuovo wallet, scrivere immediatamente le parole del **seed** nello stesso ordine in cui vengono mostrate su un supporto cartaceo e conservarlo in un luogo **sicuro**. In caso di smarrimento, non è più possibile ripristinare e recuperare i fondi presenti su quell'indirizzo. Scaricare e stampare il modello tramite questo link: [Recovery Sheet](RECOVERY_SHEET.pdf)
+3. Scegliere se generare un nuovo wallet o ripristinarne uno creato precedentemente. Se la scelta è quella di generare un nuovo wallet, scrivere immediatamente le parole del **seed** nello stesso ordine in cui vengono mostrate su un supporto cartaceo e conservarlo in un luogo **sicuro**. In caso di smarrimento, non è più possibile ripristinare e recuperare i fondi presenti su quell'indirizzo. Scaricare e stampare il modello tramite questo link: [Recovery Sheet](RECOVERY_SHEET.pdf)
 
 
 
 ## Utilizzo del POS
 
-Collegarsi tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it/?r=site/login) nella barra degli indirizzi del browser dello smartphone.
+1. Collegarsi tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it/?r=site/login) nella barra degli indirizzi del browser dello smartphone.
 
-Il codice **SIN** (Server-Initiated Pairing) che viene richiesto è il codice che è stato generato in fase di attivazione del POS e che è stato inviato anche sulla mail del commerciante. Possiamo recuperare questo codice anche all'interno dell'applicazione **Napay**, selezionando `POS` nel menù `"Gestione Applicazione"`.
+2. Il codice **SIN** (Server-Initiated Pairing) che viene richiesto è il codice che è stato generato in fase di attivazione del POS e che è stato inviato anche sulla mail del commerciante. Possiamo recuperare questo codice anche all'interno dell'applicazione **Napay**, selezionando `POS` nel menù `"Gestione Applicazione"`.
 
-Una volta effettuato il login avremo la schermata seguente:
+3. Una volta effettuato il login avremo la schermata seguente:
 
 ![POS screenshot](images/screenshot-pos.png)
 
 
 
-Inseriamo l'importo da richiedere e clicchiamo su **"bitcoin"** se vogliamo essere pagati in cryptovaluta, altrimenti clicchiamo su **"token"** se vogliamo ricevere il **Token TTS**.
+4. Inseriamo l'importo da richiedere e clicchiamo su **"bitcoin"** se vogliamo essere pagati in cryptovaluta, altrimenti clicchiamo su **"token"** se vogliamo ricevere il **Token TTS**.
 
 
 
@@ -181,7 +185,7 @@ Sulla dashboard visualizziamo:
 - Vendite totali effettuate
 - Saldo in euro da vendite
 - Saldo bitcoin da vendite
-- Saldo Token da vendite 
+- Saldo Token da vendite
 - Gli importi in euro e in bitcoin presenti sull’exchange utilizzato per il cambio in euro
 
 
@@ -198,7 +202,7 @@ Sulla dashboard visualizziamo:
 
 - #### :bust_in_silhouette: ​Account utente
 
-  Mostra i dettagli dell'utente collegato ed è possibile modificarli. Mostra, inoltre, le autorizzazioni ai consensi e le date in cui sono stati concessi. E' possibile, infine, 
+  Mostra i dettagli dell'utente collegato ed è possibile modificarli. Mostra, inoltre, le autorizzazioni ai consensi e le date in cui sono stati concessi. E' possibile, infine,
 
   - cambiare la password
   - abilitare/disabilitare la **Sicurezza a 2 Fattori per il Wallet TTS**
@@ -212,20 +216,20 @@ Sulla dashboard visualizziamo:
 
   Visualizza le impostazioni e ne permette la modifica. In particolare è possibile:
 
-  - Inserire le chiavi API dell'exchange di riferimento. 
+  - Inserire le chiavi API dell'exchange di riferimento.
   - Inserire i propri dati Bancari. Devono corrispondere a quelli inseriti sull'azione per poter ricevere euro dalla compravendita dei bitcoin.
 
 
 
 ## Gestione Pagamenti
 
-In questo menù sono racchiusi tutti i collegamenti ai comandi che servono a gestire i pagamenti dell’applicazione, dalle transazioni, alle fatture alla gestione del conto corrente.
+In questo menù sono racchiusi tutti i collegamenti ai comandi che servono a gestire i pagamenti dell’applicazione, dalle transazioni alle notifiche e alla gestione del conto corrente.
 
 ### Transazioni
 
-Con `“Lista transazioni”` è possibile visualizzare la lista di tutte le transazioni in bitcoin e lo stato in cui si trovano. Cliccando sulla singola transazione si possono visualizzare tutti i dettagli. 
+Con `“Lista transazioni”` è possibile visualizzare la lista di tutte le transazioni in bitcoin e lo stato in cui si trovano. Cliccando sulla singola transazione si possono visualizzare tutti i dettagli.
 
-Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione. 
+Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione.
 
 E' possibile stampare la lista delle transazioni oppure estrarle in formato Excel.
 
@@ -234,7 +238,7 @@ E' possibile stampare la lista delle transazioni oppure estrarle in formato Exce
 Con `“Transazioni Token”` è possibile visualizzare la lista di tutte le transazioni effettuate dal token,
 sia tramite POS che dal Wallet e lo stato in cui si trovano. Cliccando sulla singola transazione si possono visualizzare tutti i dettagli.
 
-Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione. 
+Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione.
 
 E' possibile stampare la lista delle transazioni oppure estrarle in formato Excel.
 
@@ -254,17 +258,17 @@ In questo menù sono raccolti i comandi necessari al funzionamento dell’applic
 
 ### Negozi
 
-Con `“Negozi”` si gestiscono i negozi del commerciante. Non esiste un limite ai negozi che si possono creare.
+Con `“Negozi”` si gestiscono i negozi del commerciante. Non esiste un limite ai negozi che si possono creare. Si possono eliminare solo i Negozi a cui non è associato alcun POS.
 
 ### POS (Point of Sale)
 
-Con `“POS”` si gestiscono i POS (Point of Sale) dei singoli negozi. Non esiste limite ai POS che si possono creare.
+Con `“POS”` si gestiscono i POS (Point of Sale) dei singoli negozi. Non esiste limite ai POS che si possono creare. Eliminare un POS significa che non potremo più utilizzare il codice SIN ad esso associato per ricevere cryptovaluta. Questa operazione non incide in alcun modo sul wallet dove sono `“conservati”` i bitcoin
 
 
 
 ## Gestione Prodotti
 
-In questo menù vengono gestiti i prodotti che il commerciante vuole visualizzare nel POS per desktop. 
+In questo menù vengono gestiti i prodotti che il commerciante vuole visualizzare nel POS per desktop.
 
 ### Categorie
 
@@ -284,13 +288,6 @@ Lista dei versamenti effettuati all’Associazione. E' possibile stampare la lis
 
 ### Verbali
 
-Lista dei verbali dell'Associazione. E' possibile visualizzare il contenuto dei verbali di incontro dell'Associazione.
+Lista dei verbali dell'Associazione. E' possibile visualizzare e scaricare i verbali di assemblea dell'Associazione. (art. 10, c.2 dello Statuto)
 
-Il compito di caricare i verbali è affidato al socio con la carica di Segretario.
-
-
-
-
-
-
-
+Il compito di caricare i verbali è affidato al socio con la carica di Segretario. (art. 10, c.1 dello Statuto)
