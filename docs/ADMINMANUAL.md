@@ -43,6 +43,7 @@ I profili di amministrazione sono esentati dal versamento della quota di iscrizi
 Gli altri 4 profili, dovranno ottenere l'approvazione da parte dell'Amministratore. I soci dovranno effettuare il pagamento della quota associativa in bitcoin o altra forma di pagamento. L'amministratore può anche rifiutare di approvare un nuovo iscritto, con la dovuta motivazione.
 
 
+
 ## Guida operativa per gli amministratori
 
 ### Amministrazione
