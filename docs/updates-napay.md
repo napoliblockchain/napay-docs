@@ -2,6 +2,8 @@
 
 #### 30.07.2017
     - #282 : lista pagamenti per singolo socio non filtra!
+    - Creata nuova tabella st_verbali
+    - Generata Gestione Verbali
 
 #### 24.07.2019
     - #279 : versioning da file di testo
