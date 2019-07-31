@@ -1,5 +1,24 @@
 # Aggiornamenti
 
+#### 31.07.2019
+
+    - #270 : Aperto nuovo branch no-associazione
+
+    - eliminato campo da np_merchants (id_association) [ALTER TABLE np_merchants DROP id_association;]
+    - eliminati AssociationController, Association model, association views
+    - eliminato Associations da MerchantsController
+    - modificata _form_ in merchants
+    - eliminato $merchants->id_association da UsersController
+    - fix bug in New Store che caricava i merchants eliminati
+    - fix merchant e store creati da admin
+    - ripulite tutte le views e i controllers dove compariva Associations
+    - spostata funzione CreateBPSUser in classe Napay
+
+
+------------------------------------
+- ALLINEAMENTO TEST
+
+
 #### 30.07.2017
     - #282 : lista pagamenti per singolo socio non filtra!
     - Creata nuova tabella st_verbali
