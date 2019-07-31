@@ -56,10 +56,10 @@ Nel menù Amministrazione sono presenti i comandi necessari alla gestione delle 
 -  `Scaduti: ` filtro per i soci la cui iscrizione è scaduta. I nominativi restano in questo filtro fino ad un massimo di 365 giorni
 
 2. Per ciascun socio è possibile:
-    a. effettuare il reset della password
-    b. verificare i consensi concessi in fase di registrazione
-    c. controllare i pagamenti effettuati
-    d. inviare un sollecito per il pagamento della quota di iscrizione
+    - effettuare il reset della password
+    - verificare i consensi concessi in fase di registrazione
+    - controllare i pagamenti effettuati
+    - inviare un sollecito per il pagamento della quota di iscrizione
 
 #### Quote associative
 Lista dei versamenti ricevuti dall’Associazione. E' possibile stampare la lista, estrarre un file Excel, scaricare la ricevuta del pagamento.
