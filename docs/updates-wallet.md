@@ -1,3 +1,14 @@
+#### 01.08.2019
+    - #270 : Aperto nuovo branch no-associazione
+
+    - eliminato campo da np_merchants (id_association) [ALTER TABLE np_merchants DROP id_association;]
+    - eliminati Controller Association, Merchants, Users, Userstytpe
+    - eliminati Model Associations, DockerWallets
+    - ripulite tutte le views e i controllers dove compariva Associations
+    - Inserito nuovo controllo Login senza Privilegi di commerciante
+
+    - Preparazione nuova funzione FastScan sulla blockchain
+
 #### 12.07.2019
     - #239 : 2fa opzionale
     - adeguamento subscriptions
