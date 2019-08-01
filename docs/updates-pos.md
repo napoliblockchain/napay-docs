@@ -1,3 +1,11 @@
+#### 01.08.2019
+    - #270 : Aperto nuovo branch no-associazione
+    - eliminato campo da np_merchants (id_association) [ALTER TABLE np_merchants DROP id_association;]
+    - eliminato Associations da MerchantsController
+    - eliminato UsersController
+    - ripulite tutte le views e i controllers dove compariva Associations
+    - aggiunta funzione get_domain in classe Utility
+
 #### 22.07.2019
     - #271 : menu: icona $ diventa btc
 
