@@ -1,3 +1,6 @@
+#### 05.08.2019
+    - fixed bug in multiwallet
+
 #### 01.08.2019
     - #270 : Aperto nuovo branch no-associazione
 
