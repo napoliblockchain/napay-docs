@@ -1,6 +1,6 @@
 # Napay TTS Wallet
 
-#### PWA - v. 0.4
+### Progressive Web App - v. 0.4
 
 ![Screenshot of Napay TTS PWA app](images/screenshot-wallet.png)
 
@@ -37,13 +37,9 @@
 ###### PWA
 
 - [x] Service Worker
-
 - [x] Push messages
-
 - [x] Use of indexedDB
-
 - [x] Static precache & dynamic cache
-
 - [x] Save coin send requests for offline use
 
   [^1]: when the app returns on-line, memorized requests will be executed!
@@ -66,11 +62,10 @@ Il **Wallet TTS** è il software con cui il commerciante gestisce i token ricevu
 
 Per accedere, basta cliccare sul pulsante **Wallet TTS** visibile nel widget di Napay, oppure digitare direttamente l'URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it) nella barra degli indirizzi del browser dello smartphone.
 
-Nella pagina di *Login* inserire lo **username** e la **password**.
-Se in **Napay** abbiamo abilitato l'autenticazione a 2 fattori nelle impostazioni, non potremo accedere al Wallet finché non avremo inserito il codice di sicurezza richiesto.
 
+Effettuare il login con le credenziali di accesso all'applicazione **Napay**. Se in **Napay** abbiamo abilitato la **Sicurezza a 2 Fattori per il Wallet TTS** nelle impostazioni utente, non potremo accedere al Wallet finché non avremo inserito il codice di sicurezza richiesto.
 
 
 ## Primo accesso
 
-Se è la prima volta che si effettua l'accesso al wallet, dovremo scegliere se generare un nuovo **seed** oppure inserirne uno già in nostro possesso. 
+Se è la prima volta che si effettua l'accesso al wallet, dovremo scegliere se generare un nuovo **seed** oppure inserirne uno già in nostro possesso. Se la scelta è quella di generare un nuovo wallet, scrivere immediatamente le parole del **seed** nello stesso ordine in cui vengono mostrate su un supporto cartaceo e conservarlo in un luogo **sicuro**. In caso di smarrimento, non è più possibile ripristinare e recuperare i fondi presenti su quell'indirizzo. Scaricare e stampare il modello tramite questo link: [Recovery Sheet](RECOVERY_SHEET.pdf)
