@@ -42,7 +42,7 @@
 - [x] Static precache & dynamic cache
 - [x] Save coin send requests for offline use
 
-  [^1]: when the app returns on-line, memorized requests will be executed!
+[^1]: when the app returns on-line, memorized requests will be executed!
 
 ###### Security
 
