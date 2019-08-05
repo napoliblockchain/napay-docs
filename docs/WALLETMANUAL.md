@@ -54,3 +54,23 @@
 - [x] Google 2FA Login
 - [x] Seed management with recovery wallet
 - [x] BIP32 passphrase
+
+
+## Info
+
+Il **Wallet TTS** è il software con cui il commerciante gestisce i token ricevuti dalle vendite effettuate tramite POS. Trattandosi di un'applicazione web si può utilizzare anche da PC, ma per una migliore esperienza d'uso **si consiglia di utilizzare uno smartphone**.
+
+
+
+## Login
+
+Per accedere, basta cliccare sul pulsante **Wallet TTS** visibile nel widget di Napay, oppure digitare direttamente l'URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it) nella barra degli indirizzi del browser dello smartphone.
+
+Nella pagina di *Login* inserire lo **username** e la **password**.
+Se in **Napay** abbiamo abilitato l'autenticazione a 2 fattori nelle impostazioni, non potremo accedere al Wallet finché non avremo inserito il codice di sicurezza richiesto.
+
+
+
+## Primo accesso
+
+Se è la prima volta che si effettua l'accesso al wallet, dovremo scegliere se generare un nuovo **seed** oppure inserirne uno già in nostro possesso. 

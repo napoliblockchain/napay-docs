@@ -32,13 +32,14 @@ Made with ❤️ by [Sergio Casizzone](https://sergiocasizzone.it)
 
 
 
-## Login
+## Info
 
 Il POS o Point of Sale (Punto di vendita) è il software con cui il commerciante effettua le vendite al dettaglio. Può essere utilizzato da tutti i dispositivi mobili, smartphone, tablet ed anche da Pc Desktop.
 
 Per comodità di trasporto, si consiglia l’uso di uno smartphone. Se invece si dispone di un PC Desktop nel proprio negozio, può essere consigliabile l’utilizzo della versione desktop. **L’utente non deve impostare assolutamente nulla, è il software che cambia visualizzazione in base al tipo di dispositivo utilizzato.**
 
 
+## Login
 
 Per accedere, basta cliccare sul pulsante **POS** visibile nel widget di Napay, oppure digitare direttamente l'URL [pos.napoliblockchain.it](https://pos.napoliblockchain.it) nella barra degli indirizzi del browser.
 
