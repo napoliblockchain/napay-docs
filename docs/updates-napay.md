@@ -3,7 +3,7 @@
 ------------------------------------------------
 #### 09.08.2019 - ALLINEAMENTO PRODUZIONE E TEST
 ------------------------------------------------
-    **Nuove features**
+**Nuove features**
 
     - Eliminata gestione Associazioni di Categoria
     - Creata gestione Verbali di Assemblea
@@ -19,7 +19,7 @@
 ------------------------------------------------
 #### 30.07.2019 - ALLINEAMENTO PRODUZIONE E TEST
 ------------------------------------------------
-    **Nuove features**
+**Nuove features**
 
     - Aggiunto widget con i link alle applicazioni POS e Wallet TTS
     - Aggiunti nuovi grafici sulla dashboard
@@ -44,7 +44,7 @@
 ------------------------------------------------
 #### 16.05.2019 - ALLINEAMENTO PRODUZIONE E TEST
 ------------------------------------------------
-    **Nuove features**
+**Nuove features**
 
     - Nuova Gestione `iscrizione socio` da parte degli amministratori che possono approvare o meno una nuova iscrizione
     - Salvataggio dei consensi in fase di iscrizione dei soci.
@@ -68,3 +68,8 @@
     - Gestione transazioni da conto Exchange
     - Gestione Impostazioni webapp a singoli step
     - Gestione/Creazione Wallet Bitcoin personalizzato per Merchant.
+
+
+## v0.0.1
+**10/10/2018**
+- Initial Release

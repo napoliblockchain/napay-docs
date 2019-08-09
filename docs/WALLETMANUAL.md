@@ -6,7 +6,7 @@
 
 
 
-❤️❤️❤️ A wallet using Naples Payment Token, implementing a lot of PWA love. ❤️❤️❤️
+:heart::heart::heart: A wallet using Naples Payment Token, implementing a lot of PWA love. :heart::heart::heart:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
 

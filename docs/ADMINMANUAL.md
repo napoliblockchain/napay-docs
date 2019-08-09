@@ -71,6 +71,11 @@ Gestisce le nuove richieste di iscrizione all'Associazione. L'amministratore pu√
 #### Promemoria
 Gestisce l'invio massivo dei solleciti per gli utenti con l'adesione all'Associazione in scadenza.
 
+#### Verbali
+Gestisce il caricamento e la visualizzazione dei verbali di assemblea dell'Associazione. (art. 10, c.2 dello Statuto)
+
+Il compito di caricare i verbali √® affidato al socio con la carica di Segretario. (art. 10, c.1 dello Statuto)
+
 #### Tabelle
 Gestisce le tabelle necessarie al corretto funzionamento dell'applicazione.
 

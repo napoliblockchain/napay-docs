@@ -1,6 +1,6 @@
-# Napay POS
+# Napay POS (Point of Sale)
 
-### Point of sale PWA - v. 1.0
+### Progressive Web App - v. 1.0
 
 ![Screenshot of NaPay PWA app](images/screenshot-pos.png)
 
@@ -20,7 +20,7 @@ Made with ❤️ by [Sergio Casizzone](https://sergiocasizzone.it)
 - [x] Bitcoin (Lightning) & Token receive
 - [x] Print receipts
 
-​
+
 
 **PWA**
 
