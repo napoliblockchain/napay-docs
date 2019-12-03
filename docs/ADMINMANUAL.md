@@ -2,6 +2,8 @@
 
 ### Progressive Web App - v. 1.4
 
+#### Manuale per gli Amministratori
+
 ##### Informazioni tecniche
 
 L’applicazione ha ~~6~~ **5** diversi profili utente con privilegi differenti.
