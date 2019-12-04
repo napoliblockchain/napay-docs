@@ -8,12 +8,13 @@
 
 
 ## Authors
-    - [TXLab](https://txlab.io)
+    - [Sergio Casizzone](https://sergiocasizzone.it)
 
 
 ## Features
 
 **Wallet**
+
     - [x] Desktop & Mobile Layout
     - [x] Social Login (Telegram, Facebook, Google)
     - [x] `Tokens` Balance
@@ -28,6 +29,7 @@
 
 
 **PWA**
+
     - [x] Service Worker
     - [x] Push messages
     - [x] Save coin send requests for offline use^
@@ -35,6 +37,7 @@
   (^) when the app returns on-line, memorized requests will be executed!   
 
 **Security**
+
     - [x] PIN protected access
     - [x] Google 2FA Login
     - [x] Seed management with recovery wallet
@@ -43,7 +46,7 @@
 
 ## Security
 
-If you discover or learn about a potential error, weakness, or threat that can compromise the security of Wallet, we ask you to keep it confidential and [submit your concern directly to the Wallet TTS security team](mailto:developers@txlab.io?subject=[BitBucket]%20Bolt%20Security).
+If you discover or learn about a potential error, weakness, or threat that can compromise the security of Wallet, we ask you to keep it confidential and [submit your concern directly to the BOLT Wallet security team](mailto:jambtc@gmail.com?subject=[BitBucket]%20Bolt%20Security).
 
 
 ## License
