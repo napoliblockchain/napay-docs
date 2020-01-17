@@ -1,5 +1,15 @@
 # Aggiornamenti
 
+
+------------------------------------------------
+#### 15.01.2020 - TEST
+------------------------------------------------
+**Nuove features**
+
+    - Integrazione completa con le 4 applicazioni NaPay
+
+
+
 ------------------------------------------------
 #### 09.08.2019 - ALLINEAMENTO PRODUZIONE E TEST
 ------------------------------------------------
@@ -11,7 +21,7 @@
     - Aggiunta ricerca delle province tramite inserimento del CAP
     - Aggiunti filtri di ricerca su liste transazioni, token e pagamenti
     - Aggiunta Stampa ed estrazione Excel delle liste transazioni, token, pagamenti e soci (solo per gli admin)
-    - Aggiunta possibiltà di pagamento quota senza effettuare operazione di logout/login
+    - Aggiunta possibilità di pagamento quota senza effettuare operazione di logout/login
 
 
     - risolti bug

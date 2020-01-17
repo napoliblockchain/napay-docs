@@ -1,6 +1,14 @@
 # Aggiornamenti
 
 ------------------------------------------------
+#### 15.01.2020 - TEST
+------------------------------------------------
+**Nuove features**
+
+    - Integrazione completa con le 4 applicazioni NaPay
+    
+
+------------------------------------------------
 #### 09.08.2019 - ALLINEAMENTO PRODUZIONE E TEST
 ------------------------------------------------
 **Nuove features**
@@ -45,11 +53,11 @@
 **v0.2.2 - 23.04.2019**
 
     - versione 0.2.2 stable
-    
+
     - push subscriptions
     - listening push messages
     - send push messages from server
-    
+
     - Web push notification
         - Requesting permission
         - Showing notification
@@ -69,7 +77,7 @@
     - Background Sync
         - Registering a Synchronization Task
         - Storing our Post in IndexedDB
-    
+
     - Service worker
     - Promise and Fetch
     - Caching
@@ -79,7 +87,7 @@
     - Advanced Caching
         - Offline Fallback page
         - Cache with network fallback
-    
+
     - Google 2FA Login
     - Layout solo per mobile
     - Invio Token e Eth

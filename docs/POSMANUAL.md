@@ -1,6 +1,6 @@
 # Napay POS (Point of Sale)
 
-### Progressive Web App - v. 1.0
+### Progressive Web App - v. 1.2
 
 ![Screenshot of NaPay PWA app](images/screenshot-pos.png)
 

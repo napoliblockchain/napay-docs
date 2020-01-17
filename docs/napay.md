@@ -1,87 +1,32 @@
 # Napay
 
-### Progressive Web App - v. 1.4
-
-Napay è un'applicazione web nata per gestire facilmente i pagamenti in bitcoiin e in TTS, il Token del Comune di Napoli.
-
-
-### Authors
-
-Made with :heart: ​by [Sergio Casizzone](https://sergiocasizzone.it)
+Progressive Web App - v. 1.4
 
 
 
-![Screenshot of Napay PWA app](images/screenshot-napay.png)
 
 
 
-## Indice
-
-[Premessa](#premessa)
-
-​		[Progetto Blockchain Napoli](#progetto-blockchain-napoli)
-
-[Iscrizione Socio](#iscrizione-socio)
-
-​		[Paga Quota Iscrizione](#paga-quota-iscrizione)
-
-[Abilitazione Ricezione Bitcoin](#abilitazione-ricezione-bitcoin)
-
-​		[Creazione Negozio](#creazione-negozio)
-
-​		[Attivazione POS](#attivazione-pos)
-
-[Abilitazione Ricezione Token TTS](#abilitazione-ricezione-token-tts)
-
-[Utilizzo del POS](#utilizzo-del-pos)
-
-[Dashboard](#dashboard)
-
-​		[Header](#header)
-
-​				[Widget](#widget)
-
-​				[Notifiche](#notifiche)
-
-​				[Account Utente](#account-utente)
-
-​				[Account commerciante](#account-commerciante)
-
-​				[Impostazioni](#impostazioni)
-
-[Gestione Pagamenti](#gestione-pagamenti)
-
-​		[Transazioni](#transazioni)
-
-​		[Transazioni Token](#transazioni-token)
-
-​		[Notifiche](#notifiche)
-
-​		[Conto Exchange](#conto-exchange)
-
-[Gestione Applicazione](#gestione-applicazione)
-
-​		[Negozi](#negozi)
-
-​		[POS (Point of Sale)](#point-of-sale)
-
-[Gestione Prodotti](#gestione-prodotti)
-
-​		[Categorie ](#categorie)
-
-​		[Prodotti](#prodotti)
-
-[Amministrazione](#amministrazione)
-
-​		[Quote associative](#quote-associative)
-
-​		[Verbali](#verbali)
 
 
+
+
+
+
+
+[![Screenshot of NaPay PWA app](images/screenshot-napay.png)](https://napay.napoliblockchain.it)
+
+Napay è un'applicazione web nata per gestire facilmente i pagamenti in bitcoin e in TTS, il Token del Comune di Napoli.
+
+
+
+<div style="page-break-after: always;"></div>
 
 ## Premessa
 
 Napay (acronimo di Napoli Payments) è un software sviluppato all'interno del Progetto Blockchain Napoli da volontari e appassionati, di consolidata esperienza nei vari ambiti tecnologici (programmatori, sistemisti, ecc.), la cui sinergia ha fornito le basi per la creazione di un nuovo sistema di pagamento per le attività commerciali ed i professionisti.
+
+
 
 ### Progetto Blockchain Napoli
 
@@ -95,8 +40,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 
 
-
-
+<div style="page-break-after: always;"></div>
 ## Iscrizione Socio
 
 1. Il commerciante che vuole diventare socio deve iscriversi attraverso il form di registrazione presente sul sito inserendo le informazioni necessarie richieste per la registrazione dell’utenza.
@@ -113,7 +57,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
    -  accetta i ***Termini e le Condizioni di utilizzo del POS***
 
-     > [^]: I ***termini e le condizioni di utilizzo del POS*** riguardano **esclusivamente** i commercianti. Per i soci semplici, quest'autorizzazione non è richiesta.
+     > [^]: I ***termini e le condizioni di utilizzo del POS*** riguardano **esclusivamente** i commercianti. Per i soci non commercianti, quest'autorizzazione non è richiesta.
 
 2. L'iscrizione è subordinata all'accettazione da parte del Consiglio Direttivo che ne ratifica l'ammissione in sede di assemblea (art. 3, c. 3 dello Statuto)
 
@@ -121,7 +65,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 
 
-## Paga Quota Iscrizione
+## Pagamento Quota Iscrizione
 
 1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita presente sulla pagina di login dell'applicazione. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo il Regolamento interno dell'Associazione.
 
@@ -129,10 +73,9 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
    - Bitcoin
    - Paypal
 
-3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura per un anno a partire dalla data di registrazione dell'operazione. Nel caso di pagamento effettuato prima della scadenza naturale, l'anno di validità viene aggiunto alla data di scadenza effettiva, non a quella in cui viene effettuata l'operazione.
+3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura fino al 31 dicembre dell'anno solare in corso.
 
-
-
+<div style="page-break-after: always;"></div>
 ## Abilitazione Ricezione Bitcoin
 
 ### Creazione Negozio
@@ -141,24 +84,38 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
     a. Se l'indirizzo della sede del negozio combacia con quello inserito in fase di registrazione, inserire solo la denominazione del Negozio e salvare;
     b. Se invece gli indirizzi sono diversi (ad es. sede legale e sede operativa differenti), inserire il nuovo indirizzo, quindi confermare il salvataggio.
 
-### Attivazione POS
+#### Configurazione Negozio
 
-1. Appena creato il Negozio, il software ci informa se si vuole abilitare il POS. Clicchiamo sul pulsante `Nuovo POS` e inseriamo:
+Una volta creato il Negozio è necessario impostare i parametri di configurazione dello stesso.
+
+- Impostazioni generali
+- Exchange Rate
+- Inserimento Master Public Key (per ciascuna cryptovaluta abilitata nelle impostazioni del Commerciante). Se non si conosce il metodo di estrazione della MPK da un wallet, seguire la guida a questo link: [Guida estrazione MPK](https://napoliblockchain.it/esportare-la-chiave-pubblica-mpk-dal-wallet-coinomi/). Al termine di questa operazione, verranno mostrati 10 indirizzi bitcoin generati dall'applicazione web utilizzando la MPK dell'utente. Verificare che gli indirizzi generati corrispondano con quelli presenti sul proprio wallet per **certificare** il corretto funzionamento della MPK.
+- Personalizzazione Invoice
+
+### Creazione POS
+
+1. Appena creato il Negozio, il software ci informa se si vuole generare il POS. Clicchiamo sul pulsante `Nuovo POS` e inseriamo:
    -  la descrizione del POS per identificarlo secondo l'organizzazione interna *(es. POS principale, POS piano terra, POS reparto 1, ecc…)*;
-   -  la **Master Public Key (MPK)** del Wallet bitcoin. Se non si conosce il metodo di estrazione della MPK da un wallet, seguire la guida a questo link: [Guida estrazione MPK](https://napoliblockchain.it/esportare-la-chiave-pubblica-mpk-dal-wallet-coinomi/)
-2. Dopo aver salvato queste informazioni, cliccare sul pulsante `Attiva POS`. Al termine di questa operazione, verranno mostrati 10 indirizzi bitcoin generati dall'applicazione web utilizzando la MPK dell'utente. Verificare che gli indirizzi generati corrispondano con quelli presenti sul proprio wallet per **certificare** la corretta abilitazione del POS.
+2. Una volta creato il POS, viene generato un **"pairing code"** che serve per l'attivazione dello stesso. Questo codice ha una durata di 15 minuti. Se si prova ad attivare il POS oltre i 15 minuti si otterrà un messaggio di errore. Sarà necessario, pertanto, richiedere un altro codice cliccando sul pulsante **"MODIFICA"** e salvare nuovamente le informazioni richieste.
+3. L'attivazione del POS si ottiene cliccando sul pulsante **"ATTIVA"** che lo renderà fruibile dal negoziante. Questa operazione genera un *token*, una coppia di chiavi pubblica/privata che servono per inviare le richieste di pagamento e un ***SIN*** (Server INitiating Pairing) che verrà utilizzato per effettuare la connessione sulla pagina di login del POS.
 
-
+<div style="page-break-after: always;"></div>
 
 ## Abilitazione Ricezione Token TTS
 
-1. Per ricevere il token TTS, bisogna prima di tutto accedere al wallet tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it/?r=wallet/index) nella barra degli indirizzi del browser dello smartphone.
+1. Tramite questo link: [Recovery Sheet](RECOVERY_SHEET.pdf), stampare innanzitutto il Recovery Sheet, il documento su cui andremo a scrivere il seme che l'applicazione genererà.
 
-2. Effettuare il login con le credenziali di accesso all'applicazione **Napay**. Se abbiamo abilitato la **Sicurezza a 2 Fattori per il Wallet TTS** nelle impostazioni utente, ci verrà richiesto anche il codice di controllo per proseguire.
+2. Per ricevere il token TTS, bisogna prima di tutto accedere al wallet tramite il *link* presente nel *Widget* dell'applicazione **Napay**, oppure digitando direttamente questo URL [wallet.napoliblockchain.it](https://wallet.napoliblockchain.it/?r=wallet/index) nella barra degli indirizzi del browser dello smartphone.
 
-3. Scegliere se generare un nuovo wallet o ripristinarne uno creato precedentemente. Se la scelta è quella di generare un nuovo wallet, scrivere immediatamente le parole del **seed** nello stesso ordine in cui vengono mostrate su un supporto cartaceo e conservarlo in un luogo **sicuro**. In caso di smarrimento, non è più possibile ripristinare e recuperare i fondi presenti su quell'indirizzo. Scaricare e stampare il modello tramite questo link: [Recovery Sheet](RECOVERY_SHEET.pdf)
+3. Effettuare il login con le credenziali di accesso all'applicazione **Napay**. Se abbiamo abilitato la **Sicurezza a 2 Fattori per il Wallet TTS** nelle impostazioni utente, ci verrà richiesto anche il codice di controllo per proseguire.
 
+4. Scegliere se generare un nuovo wallet o ripristinarne uno creato precedentemente. Se la scelta è quella di generare un nuovo wallet, scrivere immediatamente le parole del **seed** nello stesso ordine in cui vengono mostrate sul Recovery Sheet stampato in precedenza e conservarlo in un luogo **sicuro**. In caso di smarrimento, non è più possibile ripristinare e recuperare i fondi presenti su quell'indirizzo.
 
+5. Una volta collegati avremo (ad esempio) la seguente schermata:
+
+<img src="images/screenshot-wallet.png" alt="POS screenshot" style="zoom: 67%;" />
+<div style="page-break-after: always;"></div>
 
 ## Utilizzo del POS
 
@@ -168,33 +125,32 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 3. Una volta effettuato il login avremo la schermata seguente:
 
-![POS screenshot](images/screenshot-pos.png)
+<img src="images/screenshot-pos.png" alt="POS screenshot" style="zoom:67%;" />
 
 
 
 4. Inseriamo l'importo da richiedere e clicchiamo su **"bitcoin"** se vogliamo essere pagati in cryptovaluta, altrimenti clicchiamo su **"token"** se vogliamo ricevere il **Token TTS**.
 
+<div style="page-break-after: always;"></div>
 
+## Gestione di Napay
 
-## Dashboard
+Per *gestione di Napay* si intende tutte quelle operazioni che un *Amministratore* o un *Commerciante* compiono per il lavoro quotidiano. Queste operazioni sono svolte tramite l'utilizzo di queste funzioni:
 
-La dashboard è la schermata principale dell’applicazione dove si possono controllare a colpo d’occhio alcune informazioni statistiche che sarà possibile verificare nel dettaglio nelle schermate successive.
+- **Dashboard**: presenta una sintesi grafica dell'andamento delle vendite
+- **Transazioni**: lista delle transazioni del POS e dell'ATM
+- **Notifiche**: lista delle notifiche
+- **Impostazioni**: dell'account personale
 
-Sulla dashboard visualizziamo:
+Uno user con lo status di *Amministratore* ha la visione completa di tutte le transazioni avvenute nell'applicazione. Uno user *Commerciante* ha la visione delle sole transazioni di propria competenza.
 
-- Vendite totali effettuate
-- Saldo in euro da vendite
-- Saldo bitcoin da vendite
-- Saldo Token da vendite
-- Gli importi in euro e in bitcoin presenti sull’exchange utilizzato per il cambio in euro
+<div style="page-break-after: always;"></div>
 
-
-
-### Header
+### Header dell'Applicazione**
 
 - #### :green_book: ​Widget
 
-  Nel widget sono visualizzati i link alle altre due applicazioni, il POS e il Wallet
+  Nel widget sono visualizzati i link alle altre due applicazioni integrate con Napay: POS e Wallet-tts
 
 - #### :bell: Notifiche
 
@@ -207,19 +163,29 @@ Sulla dashboard visualizziamo:
   - cambiare la password
   - abilitare/disabilitare la **Sicurezza a 2 Fattori per il Wallet TTS**
   - abilitare/disabilitare la ricezione dei messaggi **push**
-
-- #### :construction_worker: Account commerciante
-
-  Mostra i dettagli dell'account di commerciante collegato ed è possibile modificarli.
+  - Scaricare il Recovery Sheet per il salvataggio del seed di recupero del Wallet-tts
 
 - #### :gear: Impostazioni
 
-  Visualizza le impostazioni e ne permette la modifica. In particolare è possibile:
+  Visualizza le impostazioni e ne permette la modifica. In particolare è possibile visualizzare/modificare:
 
-  - Inserire le chiavi API dell'exchange di riferimento.
-  - Inserire i propri dati Bancari. Devono corrispondere a quelli inseriti sull'azione per poter ricevere euro dalla compravendita dei bitcoin.
+  - Per l'amministratore:
+    1. Dati anagrafici dell'Associazione.
+    2. Quote per l'iscrizione.
+    3. Informazioni del server host
+    4. Informazioni sulla POA
+    5. Informazioni di amministrazione del Server BTC
+    6. SIN & Pairings per la ricezione in crypto delle iscrizioni.
+    7. API dell'exchange di riferimento della Web application.
+    8. API per il servizio di invio messaggi Push dell'applicazione.
+    9. API per il servizio di pagamento tramite PayPal.
+  - Per il commerciante:
+    1. Processore dei pagamenti in uso.
+    2. API dell'exchange di riferimento dell'utente.
+    3. Dati Bancari. Devono corrispondere a quelli inseriti sull'exchange per poter ricevere euro dalla compravendita dei bitcoin.
 
 
+<div style="page-break-after: always;"></div>
 
 ## Gestione Pagamenti
 
@@ -227,16 +193,16 @@ In questo menù sono racchiusi tutti i collegamenti ai comandi che servono a ges
 
 ### Transazioni
 
-Con `“Lista transazioni”` è possibile visualizzare la lista di tutte le transazioni in bitcoin e lo stato in cui si trovano. Cliccando sulla singola transazione si possono visualizzare tutti i dettagli.
+Con `“Transazioni”` è possibile visualizzare la lista di tutte le richieste di pagamento in cryptovaluta e lo stato in cui si trovano. Cliccando sulla singola transazione si possono visualizzare tutti i dettagli.
 
 Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione.
 
 E' possibile stampare la lista delle transazioni oppure estrarle in formato Excel.
 
-### Transazioni Token
+### Tokens
 
-Con `“Transazioni Token”` è possibile visualizzare la lista di tutte le transazioni effettuate dal token,
-sia tramite POS che dal Wallet e lo stato in cui si trovano. Cliccando sulla singola transazione si possono visualizzare tutti i dettagli.
+Con `“Tokens”` è possibile visualizzare la lista di tutte le richieste di pagamento effettuate in token
+tramite POS . Cliccando sulla singola transazione si possono visualizzare tutti i dettagli.
 
 Nella schermata dettagli, cliccando sul pulsante dello stato della transazione, il sistema verifica se ci sono stati cambiamenti nello stato della transazione. Questa funzione è utile soprattutto se la transazione si trova nello stato `"in corso..."` e sono trascorsi più di 15 minuti dalla sua creazione.
 
@@ -250,11 +216,18 @@ Con `“Lista Notifiche”` è possibile visualizzare la lista di tutte le notif
 
 Se sono state inserite le chiavi API dell'exchange su cui vengono scambiati i bitcoin, è possibile effettuare direttamente dalla webapp la sola visualizzazione delle transazioni di compravendita effettuate. L’operazione non viene effettuata in automatico dal sistema, ma è necessario cliccare sul pulsante `“Aggiorna”` per effettuare il collegamento e scaricare la lista delle movimentazioni.
 
+<div style="page-break-after: always;"></div>
 
-
-## Gestione Applicazione
+## Applicazione
 
 In questo menù sono raccolti i comandi necessari al funzionamento dell’applicazione.
+
+
+### Commercianti
+
+*Solo per Amministratori*
+
+Con `Commercianti` si gestiscono i Commercianti. In fase di inserimento si sceglie il *Server blockchain* e le cryptovalute da gestire. E' possibile assegnare un solo account commerciante per ciascun utente creato. Non si possono assegnare account commerciante agli utenti amministratori.
 
 ### Negozi
 
@@ -278,16 +251,54 @@ Si possono creare tante *categorie* diverse di prodotti e associarle a ciascun *
 
 Si inseriscono i prezzi e le immagini dei *prodotti* da associare alla singola categoria merceologica.
 
-
+<div style="page-break-after: always;"></div>
 
 ## Amministrazione
+
+### Soci
+
+1. Gestisce la lista dei soci. Si possono filtrare per
+
+- `Attivi: ` sono tutti i soci in regola con i pagamenti (anche quelli in scadenza)
+- `In scadenza: ` filtro per i soci la cui iscrizione è in scadenza entro il limite di 45 giorni
+- `Scaduti: ` filtro per i soci la cui iscrizione è scaduta. I nominativi restano in questo filtro fino ad un massimo di 365 giorni
+
+2. Per ciascun socio è possibile:
+   - effettuare il reset della password
+   - verificare i consensi concessi in fase di registrazione
+   - controllare i pagamenti effettuati
+   - inviare un sollecito per il pagamento della quota di iscrizione
+
 
 ### Quote associative
 
 Lista dei versamenti effettuati all’Associazione. E' possibile stampare la lista, estrarre un file Excel, scaricare la ricevuta del pagamento.
+
+
+### Richieste di iscrizione
+
+Gestisce le nuove richieste di iscrizione all'Associazione. L'amministratore può accettare o rifiutare la richiesta. Il diniego deve essere motivato. (art. 3, c. 4 dello Statuto)
+
+
+### Promemoria
+
+Gestisce l'invio massivo dei solleciti per gli utenti con l'adesione all'Associazione in scadenza.
+
 
 ### Verbali
 
 Lista dei verbali dell'Associazione. E' possibile visualizzare e scaricare i verbali di assemblea dell'Associazione. (art. 10, c.2 dello Statuto)
 
 Il compito di caricare i verbali è affidato al socio con la carica di Segretario. (art. 10, c.1 dello Statuto)
+
+
+### Menù Tabelle
+
+1. Server blockchain
+2. Assets
+3. Exchanges
+4. Gateway
+5. Tipo utenti
+6. Cariche
+7. Tipo quote
+8. Tipo pagamenti

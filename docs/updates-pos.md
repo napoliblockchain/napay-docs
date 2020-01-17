@@ -1,3 +1,11 @@
+------------------------------------------------
+#### 15.01.2020 - TEST
+------------------------------------------------
+**Nuove features**
+
+    - Integrazione completa con le 4 applicazioni NaPay
+    
+
 #### 01.08.2019
     - #270 : Aperto nuovo branch no-associazione
     - eliminato campo da np_merchants (id_association) [ALTER TABLE np_merchants DROP id_association;]
