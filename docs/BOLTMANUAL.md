@@ -19,33 +19,33 @@ A PWA TTS Wallet - v. 1.2
 
 **Wallet**
 
-    - [x] Desktop & Mobile Layout
-    - [x] Social Login (Telegram, Facebook, Google)
-    - [x] `Tokens` Balance
-    - [x] Token send & receive
-    - [x] Available in many languages (english, italian)
-    - [x] Transactions list
-    - [x] Transaction details
-    - [x] Blockchain sync & rescan
-    - [x] Address Book management
-    - [x] Send Message to user
-    - [x] Send Token to connected Social users
+- [x] Desktop & Mobile Layout
+- [x] Social Login (Telegram, Facebook, Google)
+- [x] `Tokens` Balance
+- [x] Token send & receive
+- [x] Available in many languages (english, italian)
+- [x] Transactions list
+- [x] Transaction details
+- [x] Blockchain sync & rescan
+- [x] Address Book management
+- [x] Send Message to user
+- [x] Send Token to connected Social users
 
 
 **PWA**
 
-    - [x] Service Worker
-    - [x] Push messages
-    - [x] Save coin send requests for offline use^
+- [x] Service Worker
+- [x] Push messages
+- [x] Save coin send requests for offline use^
 
   (^) when the app returns on-line, memorized requests will be executed!   
 
 **Security**
 
-    - [x] PIN protected access
-    - [x] Google 2FA Login
-    - [x] Seed management with recovery wallet
-    - [x] BIP32 passphrase
+- [x] PIN protected access
+- [x] Google 2FA Login
+- [x] Seed management with recovery wallet
+- [x] BIP32 passphrase
 
 
 ## Security
