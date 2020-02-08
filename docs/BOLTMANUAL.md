@@ -1,4 +1,8 @@
-# Bolt TTS Wallet - Progressive Web App - v. 1.2
+# Bolt
+
+A PWA TTS Wallet - v. 1.2
+
+
 
 [![Screenshot of Bolt TTS PWA app](images/screenshot-bolt.png)](https://bolt-tts.tk)
 
