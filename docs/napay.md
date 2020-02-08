@@ -41,6 +41,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
 
 <div style="page-break-after: always;"></div>
+
 ## Iscrizione Socio
 
 1. Il commerciante che vuole diventare socio deve iscriversi attraverso il form di registrazione presente sul sito inserendo le informazioni necessarie richieste per la registrazione dell’utenza.
