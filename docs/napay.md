@@ -58,7 +58,7 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 
    -  accetta i ***Termini e le Condizioni di utilizzo del POS***
 
-     > [^]: I ***termini e le condizioni di utilizzo del POS*** riguardano **esclusivamente** i commercianti. Per i soci non commercianti, quest'autorizzazione non è richiesta.
+     > [^]: I ***termini e le condizioni di utilizzo del POS*** riguardano **esclusivamente** i commercianti. Per i soci non commercianti quest'autorizzazione non è richiesta.
 
 2. L'iscrizione è subordinata all'accettazione da parte del Consiglio Direttivo che ne ratifica l'ammissione in sede di assemblea (art. 3, c. 3 dello Statuto)
 
@@ -71,19 +71,20 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita presente sulla pagina di login dell'applicazione. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo il Regolamento interno dell'Associazione.
 
 2. Il pagamento può avvenire tramite transazione in
-   - Bitcoin
+   - Bitcoin o Litecoin 
    - Paypal
 
 3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura fino al 31 dicembre dell'anno solare in corso.
 
 <div style="page-break-after: always;"></div>
-## Abilitazione Ricezione Bitcoin
+
+## Abilitazione Ricezione Cryptovaluta 
 
 ### Creazione Negozio
 
 1. Per rendere operativo il software, cioè essere capaci di ricevere bitcoin, è necessario creare un Negozio a cui sia associato uno o più POS. Una volta cliccato nel menù su `Nuovo Negozio`, basta seguire queste regole:
-    a. Se l'indirizzo della sede del negozio combacia con quello inserito in fase di registrazione, inserire solo la denominazione del Negozio e salvare;
-    b. Se invece gli indirizzi sono diversi (ad es. sede legale e sede operativa differenti), inserire il nuovo indirizzo, quindi confermare il salvataggio.
+    - Se l'indirizzo della sede del negozio combacia con quello inserito in fase di registrazione, inserire solo la denominazione del Negozio e salvare;
+    - Se invece gli indirizzi sono diversi (ad es. sede legale e sede operativa differenti), inserire il nuovo indirizzo, quindi confermare il salvataggio.
 
 #### Configurazione Negozio
 
@@ -136,7 +137,7 @@ Una volta creato il Negozio è necessario impostare i parametri di configurazion
 
 ## Gestione di Napay
 
-Per *gestione di Napay* si intende tutte quelle operazioni che un *Amministratore* o un *Commerciante* compiono per il lavoro quotidiano. Queste operazioni sono svolte tramite l'utilizzo di queste funzioni:
+*Napay* permette la gestione di tutte le operazioni che un *Amministratore* o un *Commerciante* compiono per il lavoro quotidiano. Queste attività sono svolte tramite l'utilizzo delle seguenti funzioni:
 
 - **Dashboard**: presenta una sintesi grafica dell'andamento delle vendite
 - **Transazioni**: lista delle transazioni del POS e dell'ATM
@@ -175,12 +176,14 @@ Uno user con lo status di *Amministratore* ha la visione completa di tutte le tr
     2. Quote per l'iscrizione.
     3. Informazioni del server host
     4. Informazioni sulla POA
-    5. Informazioni di amministrazione del Server BTC
-    6. SIN & Pairings per la ricezione in crypto delle iscrizioni.
+    5. Negozio dell'Associazione per ricevere le iscrizioni in Cryptovaluta
+    6. Pos per la ricezione in crypto delle iscrizioni.
     7. API dell'exchange di riferimento della Web application.
     8. API per il servizio di invio messaggi Push dell'applicazione.
     9. API per il servizio di pagamento tramite PayPal.
-  - Per il commerciante:
+   10. API per il login social di Bolt
+ 
+ - Per il commerciante:
     1. Processore dei pagamenti in uso.
     2. API dell'exchange di riferimento dell'utente.
     3. Dati Bancari. Devono corrispondere a quelli inseriti sull'exchange per poter ricevere euro dalla compravendita dei bitcoin.
@@ -190,7 +193,7 @@ Uno user con lo status di *Amministratore* ha la visione completa di tutte le tr
 
 ## Gestione Pagamenti
 
-In questo menù sono racchiusi tutti i collegamenti ai comandi che servono a gestire i pagamenti dell’applicazione, dalle transazioni alle notifiche e alla gestione del conto corrente.
+In questo menù sono racchiusi tutti i collegamenti ai comandi che servono a gestire i pagamenti dell’applicazione, dalle transazioni alle notifiche.
 
 ### Transazioni
 
@@ -213,9 +216,7 @@ E' possibile stampare la lista delle transazioni oppure estrarle in formato Exce
 
 Con `“Lista Notifiche”` è possibile visualizzare la lista di tutte le notifiche ricevute non ancora visualizzate. Le notifiche si possono archiviare singolarmente o complessivamente, spuntando il checkbox relativo e cliccando sul pulsante `“Archivia notifiche”`.
 
-### Conto Exchange
 
-Se sono state inserite le chiavi API dell'exchange su cui vengono scambiati i bitcoin, è possibile effettuare direttamente dalla webapp la sola visualizzazione delle transazioni di compravendita effettuate. L’operazione non viene effettuata in automatico dal sistema, ma è necessario cliccare sul pulsante `“Aggiorna”` per effettuare il collegamento e scaricare la lista delle movimentazioni.
 
 <div style="page-break-after: always;"></div>
 
@@ -238,19 +239,10 @@ Con `“Negozi”` si gestiscono i negozi del commerciante. Non esiste un limite
 
 Con `“POS”` si gestiscono i POS (Point of Sale) dei singoli negozi. Non esiste limite ai POS che si possono creare. Eliminare un POS significa che non potremo più utilizzare il codice SIN ad esso associato per ricevere cryptovaluta. Questa operazione non incide in alcun modo sul wallet dove sono `“conservati”` i bitcoin
 
+### Self POS
 
+Si gestisce il Pos in stile Shopping Cart, inserendo i prodotti che verranno mostrati per la vendita da Desktop o Tablet. Anche se è naturalmente possibile usarlo da smartphone.
 
-## Gestione Prodotti
-
-In questo menù vengono gestiti i prodotti che il commerciante vuole visualizzare nel POS per desktop.
-
-### Categorie
-
-Si possono creare tante *categorie* diverse di prodotti e associarle a ciascun **negozio**. Ogni **negozio** può avere le proprie *categorie* merceologiche.
-
-### Prodotti
-
-Si inseriscono i prezzi e le immagini dei *prodotti* da associare alla singola categoria merceologica.
 
 <div style="page-break-after: always;"></div>
 
