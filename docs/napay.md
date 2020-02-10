@@ -1,6 +1,6 @@
 # Napay
 
-Progressive Web App - v. 1.4
+Progressive Web App - v. 1.2
 
 
 
@@ -71,14 +71,14 @@ L'Associazione Napoli Blockchain nasce sulla spinta dell’iniziativa del Comune
 1. Per effettuare il pagamento della quota di iscrizione è necessario effettuare il login nella sezione apposita presente sulla pagina di login dell'applicazione. La quota di iscrizione è diversa nel caso in cui il socio sia un commerciante oppure no, ed è stabilita secondo il Regolamento interno dell'Associazione.
 
 2. Il pagamento può avvenire tramite transazione in
-   - Bitcoin o Litecoin 
+   - Bitcoin o Litecoin
    - Paypal
 
 3. Quando si effettua il pagamento, il socio viene abilitato all'utilizzo della procedura fino al 31 dicembre dell'anno solare in corso.
 
 <div style="page-break-after: always;"></div>
 
-## Abilitazione Ricezione Cryptovaluta 
+## Abilitazione Ricezione Cryptovaluta
 
 ### Creazione Negozio
 
@@ -182,7 +182,8 @@ Uno user con lo status di *Amministratore* ha la visione completa di tutte le tr
     8. API per il servizio di invio messaggi Push dell'applicazione.
     9. API per il servizio di pagamento tramite PayPal.
    10. API per il login social di Bolt
- 
+   11. API per reCaptcha2 di Google
+
  - Per il commerciante:
     1. Processore dei pagamenti in uso.
     2. API dell'exchange di riferimento dell'utente.

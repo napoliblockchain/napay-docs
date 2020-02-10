@@ -59,7 +59,7 @@ Tutte le `“Web Application“` sono **PWA Ready**. Questo significa che si pos
 
 - [Manuale socio Napay](docs/napay.md)
 
-- [Manuale Wallet TTS](docs/WALLETMANUAL.md)
+- [Manuale Wallet TTS](docs/wallet-tts.md)
 
 - [Manuale BOLT](docs/BOLTMANUAL.md)
 

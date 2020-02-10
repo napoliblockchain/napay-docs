@@ -27,10 +27,9 @@
 - [x] `Token` & `Gas` Balance
 - [x] Token send & receive
 - [x] Gas receive only feature
-- [ ] Available in many languages
+- [x] Available in English and Italian languages
 - [x] Transactions list
 - [x] Transaction details
-- [ ] Multi wallet manager (coming soon)
 - [x] Select predefined wallet to use
 - [x] Blockchain sync & rescan
 
