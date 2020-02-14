@@ -1,10 +1,32 @@
+## POS
+
+#### versione 1.3
+
+	**new features**
+	- #57 Napay: togli copyright nel footer e metti powered by
+	- #52 Napay: prorogare scadenza iscrizione al 28 febbraio
+	- #48 Napay: gestione/visualizzazione dei log delle applicazioni
+    - #27 Bolt: inserire recaptha2 in ripristino pwd, form, bugs e login
+
+	**fix**
+	- #61 Push: i messaggi sono tutti [bolt]
+    - #58 pos: check sw static cache
+    - #54 Napay: transaction details error
+    - #51 Pos: invoice TTS deve mostrare logo personalizzato caricato nello store di Napay
+    - #46 Pos: errore in lista token se non si ha un wallet
+    - #44 POS: id_pos
+    - #34 Pos/Bolt: non si aggiorna messaggio memo dalla transazione ipn
+    - #24 Napay: col nuovo sistema di notifiche mancano le notifiche agli admin
+    - #20 POs Desktop : select "undeleted"
+
+
 ------------------------------------------------
 #### 15.01.2020 - TEST
 ------------------------------------------------
 **Nuove features**
 
     - Integrazione completa con le 4 applicazioni NaPay
-    
+
 
 #### 01.08.2019
     - #270 : Aperto nuovo branch no-associazione

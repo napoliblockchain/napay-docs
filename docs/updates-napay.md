@@ -1,5 +1,23 @@
 # Aggiornamenti
 
+#### versione 1.3
+
+	**new features**
+	- #52 Napay: prorogare scadenza iscrizione al 28 febbraio
+	- #48 Napay: gestione/visualizzazione dei log delle applicazioni
+    - #32 Napay: mailing list ai soci x comunicazioni generiche
+	- #28 Napay: Consensi: il socio deve poter modificare quello sul marketing
+
+	**fix**
+	- #62 Napay: Settings, social compare in tutte le maschere
+	- #61 Push: i messaggi sono tutti [bolt]
+	- #59 Napay: click su logo esce dall'applicazione
+	- #57 Napay: togli copyright nel footer e metti powered by
+	- #55 Napay : impostazioni pos_sin
+	- #54 Napay: transaction details
+	- #27 Napay: inserire recaptha2 in ripristino pwd, form, bugs e login
+	- #24 Napay: col nuovo sistema di notifiche mancano le notifiche agli admin
+
 
 ------------------------------------------------
 #### 15.01.2020 - TEST
@@ -7,6 +25,7 @@
 **Nuove features**
 
     - Integrazione completa con le 4 applicazioni NaPay
+    - Nuova gestione issue su github (La numerazione riparte da 1)
 
 
 
@@ -49,6 +68,49 @@
     - risolti bug
 
 
+------------------------------------------------
+#### 12.07.2019 - ALLINEAMENTO PRODUZIONE E TEST
+------------------------------------------------
+
+**dalla versione d16b85d (16.06.2019) alla versione 34afab6 (12.07.2019)**
+
+	[new features]
+	- Lista soci aggiunti FILTRI su attivi, in scadenza, scaduti
+	- CREAZIONE AUTOMATICA USER, STORE e POS SU BTCPAY SERVER
+	- solo admins tranne segretario, possono visualizzare pulsante per mostrare in chiaro la pwd di accesso a BPS
+	  sulla lista mostrare un icona (°-°)
+	- Aggiunto nuovo menù con i link al Wallet e al POS   
+	- inserite guida crezione store e pos nelle notifiche
+	- help in linea per la creazione di store e pos
+	- mail su ipn pagamenti iscrizione in bitcoin
+	- nuovo grafico pagamenti
+	- corretto pulsanti dashboard
+	- #183 :NUOVA DASH X SOLI SOCI,
+	- Lista transazioni bitcoin e token: Data cliccabile
+	- se sei un associazione di categoria non puoi visualizzare i prodotti
+	- le categorie prodotti vanno per STORE e non per Merchants.
+	- [admin] Nel menù impostazioni inseriti nuovi campi Vapid keys for push subscription
+
+	[fix]
+	- #229 :modifica settings account commerciante,
+	- #224 :nuovo negozio la provincia è sempre sbagliata,
+	- #228 :complimenti pos riceverà ai,
+	- #225 :guida creazione pos, errore indicazione menu in alto a dx,
+	- #223 :sitebehind tutto minuscolo,
+	- #222 :user impostazioni gateway: non modificabile da utente! readonly!!
+	- #221 :link al pos con jpg e invio sin tramite get,
+	- #217 :dettaglio transazione conto manca n. ordine,
+	- #216 :lista transazioni conto: adeguamento transazioni,
+	- #219 :admin inserisce nuovo socio
+	- #202 :show notifiche mobile non è centrato,
+	- #205 :pulsante pagamenti con Badge non è allineato agli altri,
+	- #206 :data registrazione operazione pagamento nn deve essere modificabile,
+	- #207 :facilitare click sulle liste,
+	- #174 :shopping: le immagini vanno suddivise x merchant,
+	- #33  :Nuovo Prodotto salva: in caso di assenza immagini l'errore viene scritto 2 volte,
+	- #140 :se i dati in gdpr_ (ad esempio fax ) sono vuoti esce errore in privacy,
+	- #204 :visualizza/STAMPA SCHEDA UTENTE con parametri di timestamp vari,
+	- #203 :users con numero di telefono    
 
 
 ------------------------------------------------
@@ -78,6 +140,7 @@
     - Gestione transazioni da conto Exchange
     - Gestione Impostazioni webapp a singoli step
     - Gestione/Creazione Wallet Bitcoin personalizzato per Merchant.
+
 
 
 ## v0.0.1

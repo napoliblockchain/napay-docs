@@ -50,7 +50,7 @@ Tutte le `“Web Application“` sono **PWA Ready**. Questo significa che si pos
 
 | Authors                                  | Versione |
 | ---------------------------------------- | -------- |
-| Made with ❤️ by **Napoli Blockchain ETS** | 1.2      |
+| Made with ❤️ by **Napoli Blockchain ETS** | 1.3      |
 
 <div style="page-break-after: always;"></div>
 

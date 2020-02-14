@@ -1,6 +1,6 @@
 # Napay TTS Wallet
 
-### Progressive Web App - v. 1.2
+### Progressive Web App
 
 ![Screenshot of Napay TTS PWA app](images/screenshot-wallet.png)
 

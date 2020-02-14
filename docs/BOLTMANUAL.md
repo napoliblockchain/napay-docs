@@ -1,6 +1,6 @@
 # Bolt
 
-A PWA TTS Wallet - v. 1.2
+A PWA TTS Wallet
 
 
 

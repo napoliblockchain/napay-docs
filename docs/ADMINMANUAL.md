@@ -1,6 +1,6 @@
 # Napay
 
-### Progressive Web App - v. 1.2
+### Progressive Web App
 
 #### Manuale per gli Amministratori
 
