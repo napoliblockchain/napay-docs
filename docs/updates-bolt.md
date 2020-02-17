@@ -3,10 +3,13 @@
 #### versione 1.3
 
     **new features**
+    - #74 Logout from create/restore seed
+    - #71 Bolt: you can backup master seed only if pin is enabled
     - #57 Napay: togli copyright nel footer e metti powered by
     - #48 Napay: gestione/visualizzazione dei log delle applicazioni
 
     **fix**
+    - #72 Bolt: remove pin don't ask pin (only on 1st set)
     - #68 [Bolt] servizio watchtower deve ripartire in automatico se va giù
     - #65 [Bolt] Non si aggiorna subito a transazione OK
     - #61 Push: i messaggi sono tutti [bolt]

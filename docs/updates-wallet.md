@@ -3,6 +3,7 @@
 #### versione 1.3
 
     **new features**
+    - #74 Logout from create/restore seed
     - #57 Napay: togli copyright nel footer e metti powered by
     - #52 Napay: prorogare scadenza iscrizione al 28 febbraio
     - #48 Napay: gestione/visualizzazione dei log delle applicazioni
