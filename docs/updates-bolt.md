@@ -2,11 +2,15 @@
 
 #### versione 1.3.1
 
+    **new features**
     - generate auto-random password to crypt seed #79
-    - Testo pagina primo accesso #76
-    - Testi Schermata invio #75
     - NFC to share tokens #73
+    - Nuovo menu attività aderenti #26
+
+    **fix**
     - Il tasto segnala bug non ha tutti i campi #64
+    - Testi Schermata invio #75
+    - Testo pagina primo accesso #76
 
 
 #### versione 1.3
