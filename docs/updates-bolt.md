@@ -12,6 +12,8 @@
 #### versione 1.3
 
     **new features**
+    - NFC to share tokens #73
+    - Bolt Accorpamento menù #66
     - #74 Logout from create/restore seed
     - #71 Bolt: you can backup master seed only if pin is enabled
     - #57 Napay: togli copyright nel footer e metti powered by
