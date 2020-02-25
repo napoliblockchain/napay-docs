@@ -2,16 +2,26 @@
 
 #### versione 1.3.1
 
+**new features**
+
     - generate auto-random password to crypt seed #79
+    - Due nuovi voci: Chi accetta i buoni, dove posso guadagnare i buoni #78
+    - NFC to share tokens #73
+    - Nuovo menu attività aderenti #26
+
+
+**fix**
+
     - Testo pagina primo accesso #76
     - Testi Schermata invio #75
-    - NFC to share tokens #73
     - Il tasto segnala bug non ha tutti i campi #64
+
 
 
 #### versione 1.3
 
-    **new features**
+**new features**
+
     - NFC to share tokens #73
     - Bolt Accorpamento menù #66
     - #74 Logout from create/restore seed
@@ -19,7 +29,9 @@
     - #57 Napay: togli copyright nel footer e metti powered by
     - #48 Napay: gestione/visualizzazione dei log delle applicazioni
 
-    **fix**
+
+**fix**
+
     - #72 Bolt: remove pin don't ask pin (only on 1st set)
     - #68 [Bolt] servizio watchtower deve ripartire in automatico se va giù
     - #65 [Bolt] Non si aggiorna subito a transazione OK

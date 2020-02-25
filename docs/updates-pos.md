@@ -3,6 +3,7 @@
 #### versione 1.3.1
 
     - Il tasto segnala bug non ha tutti i campi #64
+    - Contact form mail library missing #85
 
 
 
