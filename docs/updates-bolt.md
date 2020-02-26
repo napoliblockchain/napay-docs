@@ -7,6 +7,7 @@
     - generate auto-random password to crypt seed #79
     - Due nuovi voci: Chi accetta i buoni, dove posso guadagnare i buoni #78
     - NFC to share tokens #73
+    - nodi poa da scegliere random #63
     - Nuovo menu attività aderenti #26
 
 

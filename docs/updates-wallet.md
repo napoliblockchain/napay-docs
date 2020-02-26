@@ -7,6 +7,7 @@
     - Testi Schermata invio #75
     - NFC to share tokens #73
     - Il tasto segnala bug non ha tutti i campi #64
+    - nodi poa da scegliere random #63
 
 
 #### versione 1.3

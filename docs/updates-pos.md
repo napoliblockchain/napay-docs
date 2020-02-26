@@ -4,6 +4,7 @@
 
     - Il tasto segnala bug non ha tutti i campi #64
     - Contact form mail library missing #85
+    - nodi poa da scegliere random #63
 
 
 
