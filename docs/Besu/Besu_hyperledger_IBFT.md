@@ -1,7 +1,9 @@
-# Install Besu hyperledger - IFBT
+# Install Besu hyperledger - IBFT
+Reference: https://besu.hyperledger.org/en/stable/Tutorials/Private-Network/Create-IBFT-Network/
+
+
 
 ### SO windows 7, Ubuntu 18.04 VM
-
 Installing the Default OpenJDK (Java 11)
 
 ```bash
@@ -44,7 +46,7 @@ Create folder structure:
 
 mkdir
 
-IFBT-Network/
+IBFT-Network/
     ├── Node-1
     │   └── data
     ├── Node-2
@@ -246,7 +248,9 @@ The result confirms Node-1 has three peers (Node-2, Node-3, and Node-4)
 
 
 ## Deploy Smart Contract
+for users behind proxy use: 
 
+    - git config --global http.proxy http://username:password@www.proxy.com:80
     - git clone https://github.com/napoliblockchain/ttstoken.git
     - cd ttstoken
 
