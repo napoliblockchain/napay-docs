@@ -4,7 +4,9 @@
 Sistema integrato per commercianti e utenti per l'utilizzo delle cryptovalute.
 
 
-[![GitHub commit](https://img.shields.io/github/last-commit/pcm-dpc/COVID-19)](https://github.com/pcm-dpc/COVID-19/commits/master)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/napoliblockchain/napay-docs/blob/master/LICENSE)
+[![GitHub commit](https://img.shields.io/github/last-commit/napoliblockchain/napay-docs)](https://github.com/napoliblockchain/napay-docs/commits/master)
 
 
 
