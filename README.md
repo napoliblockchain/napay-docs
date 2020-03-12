@@ -55,7 +55,7 @@ Tutte le `“Web Application“` sono **PWA Ready**. Questo significa che si pos
 
 | Authors                                  | Versione |
 | ---------------------------------------- | -------- |
-| Made with ❤️ by **Napoli Blockchain ETS** | 1.3      |
+| Made with ❤️ by **Napoli Blockchain ETS** | [1.3.0](https://github.com/napoliblockchain/napay-docs/releases/tag/6f3c5d4)     |
 
 <div style="page-break-after: always;"></div>
 
