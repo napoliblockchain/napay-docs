@@ -4,6 +4,9 @@
 Sistema integrato per commercianti e utenti per l'utilizzo delle cryptovalute.
 
 
+[![GitHub commit](https://img.shields.io/github/last-commit/pcm-dpc/COVID-19)](https://github.com/pcm-dpc/COVID-19/commits/master)
+
+
 
 
 
