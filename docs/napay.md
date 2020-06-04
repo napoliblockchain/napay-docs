@@ -288,11 +288,13 @@ Il compito di caricare i verbali è affidato al socio con la carica di Segretari
 
 ### Menù Tabelle
 
+1. Istituti
 1. Server blockchain
-2. Assets
-3. Exchanges
-4. Gateway
-5. Tipo utenti
-6. Cariche
-7. Tipo quote
-8. Tipo pagamenti
+1. Assets
+1. Nodi POA
+1. Exchanges
+1. Gateway
+1. Tipo utenti
+1. Cariche
+1. Tipo quote
+1. Tipo pagamenti

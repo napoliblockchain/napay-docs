@@ -6,10 +6,10 @@
 
 ##### Informazioni tecniche
 
-L’applicazione ha ~~6~~ **5** diversi profili utente con privilegi differenti.
+L’applicazione ha **6** diversi profili utente con privilegi differenti.
 
 - *Amministratore*
-- ~~*Associazione di categoria*~~
+- *Istituto*
 - *Commerciante*
 - *Socio*
 - *POS (profilo associato al commerciante)*
@@ -17,9 +17,13 @@ L’applicazione ha ~~6~~ **5** diversi profili utente con privilegi differenti.
 
 Ogni utente può avere **uno** solo dei citati profili.
 
-I profili Amministratore ~~e Associazione di categoria~~ non possono essere utilizzati per l’operatività del programma, non sono abilitati cioè ad operare per ricevere bitcoin nè Token TTS.
+Il profilo **Amministratore** non può essere utilizzato per l’operatività del programma, non è abilitati cioè ad operare per ricevere bitcoin nè Token TTS.
 
-~~Mentre i~~Il profilo Amministratore può gestire tutte le impostazioni del software.~~, chi ha un profilo Associazione di categoria è abilitato alla sola visualizzazione delle transazioni dei commercianti ad essa collegati.~~
+Il profilo **Istituto** non può essere utilizzato per ricevere bitcoin, ma solo Token TTS.
+
+Il profilo **Amministratore** può gestire tutte le impostazioni del software e visualizzare tutte le transazioni dei commercianti ad essa collegati.
+
+Il profilo **Istituto** può essere associato solo al WALLET-TTS.
 
 I profili Commerciante, POS e WALLET sono strettamente collegati tra di loro. Mentre con l’account Commerciante potrò visualizzare le transazioni, gestire i wallet bitcoin e del token, visualizzare le fatture, caricare le immagini dei prodotti, ecc. ecc. il profilo POS serve a generare le transazioni per ricevere le cryptovalute. Il profilo WALLET mi permette di utilizzare il wallet del Token TTS.
 
@@ -34,11 +38,11 @@ I soci possono avere le seguenti cariche statutarie:
 |   Segretario    | Socio sostenitore  |
 
 
-I soci con la carica di Presidente, Vice-presidente, Tesoriere e Segretario hanno la funzione di amministrazione del sito ~~e possono essere collegati al profilo Associazione di categoria~~.
+I soci con la carica di Presidente, Vice-presidente, Tesoriere e Segretario hanno la funzione di amministrazione del sito.
 
-Al Segretario è inibita la possibilità di modificare i pagamenti ricevuti e non può effettuare modifiche sulle impostazioni della Webapp. Il Segretario può, invece inserire nuovi soci e creare nuovi pagamenti.
+Al Segretario è inibita la possibilità di modificare i pagamenti ricevuti e non può effettuare modifiche sulle impostazioni della Webapp. Il Segretario può, invece, inserire nuovi soci e inserire nuovi pagamenti.
 
-I profili di amministrazione non possono essere legati in nessun caso a quelli operativi di commerciante, negozio o ad un POS. Gli utenti con la carica di socio fondatore, onorario, ordinario e sostenitore possono essere utilizzati sia per il profilo di socio semplice ~~Associazione di categoria~~ che per quello di Commerciante.
+I profili di amministrazione non possono essere legati in nessun caso a quelli operativi di commerciante, negozio o ad un POS. Gli utenti con la carica di socio fondatore, onorario, ordinario e sostenitore possono essere utilizzati sia per il profilo di socio semplice che per quello di Commerciante.
 
 I profili di amministrazione sono esentati dal versamento della quota di iscrizione.
 
