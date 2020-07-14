@@ -49,7 +49,7 @@ Il login all'applicazione può essere effettuato in quattro diverse modalità. L
 - Telegram
 - Google
 
-Le librerie per l'utilizzo di questi social ho pensato di non integrarle, ma di creare un repository esterno che ho chiamato **libs/oauth** così da poterle utilizzare anche per altre applicazioni. Ecco un esempio di utilizzo della libreria:
+Le librerie per l'utilizzo di questi social ho pensato di non integrarle, ma di creare un repository esterno che ho chiamato [**libs/oauth**](https://bitbucket.org/jambtc/libs/src/master/oauth/) così da poterle utilizzare anche per altre applicazioni. Ecco un esempio di utilizzo della libreria:
 
 ```php
 include ('js_login.php');
