@@ -24,7 +24,7 @@ Il software Bolt è costituito da parti di programma in php ed altre parti in Ja
 
 
 
-![img](images\patternMVC.jpg)
+![img](https://github.com/napoliblockchain/napay-docs/blob/master/docs/images/patternMVC.jpg) 
 
 
 
