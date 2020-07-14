@@ -351,8 +351,10 @@ Vengono chiamate le funzioni erc20.Balance e eth.Balance (inserite nel file js_e
 Vengono poi chiamate due funzioni che sincronizzano la blockchain in questo modo:
 
 - blockchain.sync - ricerca nei nuovi blocchi transazioni in cui sia presente l'address dell'utente. Nelle pagine successive spiegherò nel dettaglio il funzionamento delle funzioni che si interfacciano con la blockchain Ethereum. Per il momento basti sapere che nella nostra POA, generalmente, ciascun blocco viene generato ogni 15 secondi, quindi questa funzione viene richiamata ogni 7 secondi secondo la formula seguente:
+```
   -  (T2 - T1) / E dove 
     - t2-t1 è l'intervallo di tempo di 15 secondi
     - E è il numero di eventi certi che desideriamo accadano
-  - Quindi abbiamo (15 - 0) / 2 = 7,5 arrotondata a 7 secondi.
+  - Quindi abbiamo (15 - 0) / 2 = 7,5 arrotondata a 7 secondi
+```
 - blockchain.scanForNew - cerca nel db eventuali transazioni nello stato "new" e, nel caso in cui è presente la txhash (hash della transazione), verifica sulla blockchain lo stato della stessa aggiornando di conseguenza il db. Nel caso in cui la txhash è vuota la transazione viene segnalata come "failed". In pratica questa funzione agisce da "resume" nel caso in cui il software del wallet si sia bloccato o lo smartphone abbia avuto problemi di qualsiasi genere. 
