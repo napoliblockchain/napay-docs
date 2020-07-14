@@ -1,7 +1,7 @@
-<style>
- .java{  	color: blue;	  }
 
-</style>
+
+
+
 
 # Bolt Technical Manual
 
@@ -24,7 +24,7 @@ Il software Bolt è costituito da parti di programma in php ed altre parti in Ja
 
 
 
-![img](W:\napay-docs\docs\images\patternMVC.jpg)
+![img](images\patternMVC.jpg)
 
 
 
