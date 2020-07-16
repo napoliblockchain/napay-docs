@@ -16,6 +16,7 @@
 
 
 <div style="page-break-after: always;"></div>
+
 #### Il pattern MVC
 
 Il software Bolt è costituito da parti di programma in php ed altre parti in Java e html. Viene utilizzato il framework Yii nella versione 1.1.20 per cui l'architettura è formata dal pattern MVC (Model-View-Controller) secondo l'immagine seguente:
@@ -38,6 +39,7 @@ Viene, inoltre, utilizzato `l'indexedDb`, lo storage locale del browser, al cui 
 
 
 <div style="page-break-after: always;"></div>
+
 #### Il modulo di Login
 
 Il login all'applicazione può essere effettuato in quattro diverse modalità. La soluzione classica è quella di effettuare la registrazione di username e password ed usare queste due componenti per utilizzare il wallet. È stato previsto anche l'utilizzo di social per effettuare il login ed in particolare si possono usare gli account social di:
@@ -73,6 +75,7 @@ $paese = strtoupper($sourceLanguage[1]);
 
 
 <div style="page-break-after: always;"></div>
+
 #### Il controller del wallet
 
 Andiamo ora a vedere come è gestita la creazione/verifica del wallet a seconda che si utilizzi il software per la prima volta o in quelle successive.
@@ -125,6 +128,7 @@ Finora il software ha lavorato lato server.
 
 
 <div style="page-break-after: always;"></div>
+
 #### La view principale (wallet/index)
 
 La view mostra la maschera principale e carica diversi file Java. In Yii è possibile generare dinamicamente i file Java, cosa molto utile perché così è possibile modificarne i parametri a seconda delle diverse richieste di funzionamento.
@@ -193,6 +197,7 @@ readFromId('wallet',"{$from_address}")
 
 
 <div style="page-break-after: always;"></div>
+
 #### Generazione del seed
 
 Viene visualizzata una finestra Modal dove inserire e/o generare un nuovo seed. La pagina di layout (`protected/views/layout/main.php`) carica il file Javascript lightwallet.min.js (https://github.com/ConsenSys/eth-lightwallet) che è, in breve, la libreria che permette la generazione e il salvataggio delle chiavi private ethereum.
@@ -323,6 +328,7 @@ function initializeVault(password, seed) {
 ```
 
 <div style="page-break-after: always;"></div>
+
 #### Seed già generato e address trovato negli User Settings
 
 Quando l'utente effettua il login, abbiamo visto che il software controlla se nell'indexedDb è presente lo stesso address salvato nei settings dell'user richiamando, in caso di diversità, il processo di generazione del seed. Nel caso in cui siano uguali vengono richiamati i processi che possiamo anche vedere nel blocco di codice che segue:
@@ -354,6 +360,7 @@ Vengono poi chiamate due funzioni che sincronizzano la blockchain in questo modo
 
 
 <div style="page-break-after: always;"></div>
+
 #### Funzione erc20.Balance
 
 file: `*protected/controllers/WalletERC20Controller.php*`
@@ -414,6 +421,7 @@ public function actionGetBalance(){
 
 
 <div style="page-break-after: always;"></div>
+
 #### Funzione eth.Balance
 
 file: *`protected/controllers/WalletETHController.php*`
@@ -468,6 +476,7 @@ public function actionGetBalance(){
 
 
 <div style="page-break-after: always;"></div>
+
 #### Funzione blockchain.sync
 
 file: `*protected/controllers/BlockchainController.php*`
@@ -646,6 +655,7 @@ La funzione <span style="color:blue;">eth.isTxInIndexedDB</span> si occupa di le
 
 
 <div style="page-break-after: always;"></div>
+
 #### Servizio WT (watch tower)
 
 file: `protected/commands/wtCommand.php`
@@ -660,6 +670,7 @@ Abbiamo visto che quando entro nel wallet la funzione <span style="color:blue;">
 
 
 <div style="page-break-after: always;"></div>
+
 #### Funzione erc20.Send
 
 file: *`protected/controllers/WalletERC20Controller.php*`
@@ -857,6 +868,7 @@ Nel controller a seguito della chiamata alla funzione <span style="color:brown;"
 
 
 <div style="page-break-after: always;"></div>
+
 ##### Workflow Send
 
 
