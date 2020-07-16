@@ -15,14 +15,14 @@
 
 
 
+<div style="page-break-after: always;"></div>
+#### Il pattern MVC
 Il software Bolt è costituito da parti di programma in php ed altre parti in Java e html. Viene utilizzato il framework Yii nella versione 1.1.20 per cui l'architettura è formata dal pattern MVC (Model-View-Controller) secondo l'immagine seguente:
 
 
 
 
-![img](https://github.com/napoliblockchain/napay-docs/blob/master/docs/images/patternMVC.jpg)
-
-
+![img](patternMVC.jpg)
 
 
 
@@ -36,7 +36,7 @@ Viene, inoltre, utilizzato `l'indexedDb`, lo storage locale del browser, al cui 
 
 
 
-
+<div style="page-break-after: always;"></div>
 #### Il modulo di Login
 
 Il login all'applicazione può essere effettuato in quattro diverse modalità. La soluzione classica è quella di effettuare la registrazione di username e password ed usare queste due componenti per utilizzare il wallet. È stato previsto anche l'utilizzo di social per effettuare il login ed in particolare si possono usare gli account social di:
@@ -71,7 +71,7 @@ $paese = strtoupper($sourceLanguage[1]);
 
 
 
-
+<div style="page-break-after: always;"></div>
 #### Il controller del wallet
 
 Andiamo ora a vedere come è gestita la creazione/verifica del wallet a seconda che si utilizzi il software per la prima volta o in quelle successive.
@@ -123,7 +123,7 @@ $this->render('index',array(
 Finora il software ha lavorato lato server.
 
 
-
+<div style="page-break-after: always;"></div>
 #### La view principale (wallet/index)
 
 La view mostra la maschera principale e carica diversi file Java. In Yii è possibile generare dinamicamente i file Java, cosa molto utile perché così è possibile modificarne i parametri a seconda delle diverse richieste di funzionamento.
@@ -191,7 +191,7 @@ readFromId('wallet',"{$from_address}")
 ```
 
 
-
+<div style="page-break-after: always;"></div>
 #### Generazione del seed
 
 Viene visualizzata una finestra Modal dove inserire e/o generare un nuovo seed. La pagina di layout (`protected/views/layout/main.php`) carica il file Javascript lightwallet.min.js (https://github.com/ConsenSys/eth-lightwallet) che è, in breve, la libreria che permette la generazione e il salvataggio delle chiavi private ethereum.
@@ -321,7 +321,7 @@ function initializeVault(password, seed) {
 }
 ```
 
-
+<div style="page-break-after: always;"></div>
 #### Seed già generato e address trovato negli User Settings
 
 Quando l'utente effettua il login, abbiamo visto che il software controlla se nell'indexedDb è presente lo stesso address salvato nei settings dell'user richiamando, in caso di diversità, il processo di generazione del seed. Nel caso in cui siano uguali vengono richiamati i processi che possiamo anche vedere nel blocco di codice che segue:
@@ -352,7 +352,7 @@ Vengono poi chiamate due funzioni che sincronizzano la blockchain in questo modo
 - <span style="color:blue;">blockchain.scanForNew</span> - cerca nel db eventuali transazioni nello stato "new" e, nel caso in cui è presente la txhash (hash della transazione), verifica sulla blockchain lo stato della stessa aggiornando di conseguenza il db. Nel caso in cui la txhash è vuota la transazione viene segnalata come "failed". In pratica questa funzione agisce da "resume" nel caso in cui il software del wallet si sia bloccato o lo smartphone abbia avuto problemi di qualsiasi genere.
 
 
-
+<div style="page-break-after: always;"></div>
 #### Funzione erc20.Balance
 
 file: `*protected/controllers/WalletERC20Controller.php*`
@@ -412,7 +412,7 @@ public function actionGetBalance(){
 ```
 
 
-
+<div style="page-break-after: always;"></div>
 #### Funzione eth.Balance
 
 file: *`protected/controllers/WalletETHController.php*`
@@ -466,7 +466,7 @@ public function actionGetBalance(){
 ```
 
 
-
+<div style="page-break-after: always;"></div>
 #### Funzione blockchain.sync
 
 file: `*protected/controllers/BlockchainController.php*`
@@ -644,7 +644,7 @@ La funzione <span style="color:blue;">eth.isTxInIndexedDB</span> si occupa di le
 **Note**: *i messaggi push vengono ricevuti dall'utente solo se egli ha attivato ed accettato l'utilizzo nella relativa funzione "**Messaggi push**" nel menù Impostazioni dell'applicazione.*
 
 
-
+<div style="page-break-after: always;"></div>
 #### Servizio WT (watch tower)
 
 file: `protected/commands/wtCommand.php`
@@ -658,7 +658,7 @@ Questo rende possibile poter, ad esempio, chiudere immediatamente il wallet subi
 Abbiamo visto che quando entro nel wallet la funzione <span style="color:blue;">blockchain.sync</span> verifica l'ultimo blocco in cui è stato utilizzato e da quello parte alla ricerca di transazioni legate all'address relativo. Nel caso di arresto improvviso del telefono subito dopo la fase di invio token, questo potrebbe rendere non congruente il saldo token con la lista di transazioni del wallet. Il WT evita che questo accada. Scrive in un registro log (leggibile dall'amministratore in Napay) tutte le operazioni effettuate e le transazioni trovate ed aggiorna il db in maniera indipendente dal wallet. Alla sua riattivazione dopo un blocco il wallet potrà visualizzare le informazioni corrette perché queste saranno state portate a termine dal WT e non dal Javascript del wallet.
 
 
-
+<div style="page-break-after: always;"></div>
 #### Funzione erc20.Send
 
 file: *`protected/controllers/WalletERC20Controller.php*`
@@ -757,9 +757,9 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
 
 - Se la tabella è vuota la funzione auto-richiama se stessa ogni 500 msec
 
-- In caso di errore nella transazione mostra a video l'errore 
+- In caso di errore nella transazione mostra a video l'errore
 
-- Aggiunge al DOM nella tabella transazioni una nuova riga con le relative informazioni 
+- Aggiunge al DOM nella tabella transazioni una nuova riga con le relative informazioni
 
   ```javascript
   // controlla se il db di ricezione indexedDB è stato preparato dal service worker
@@ -794,9 +794,9 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
 
 ##### La funzione <span style="color:blue;">eth.txFound</span>:
 
-- Scrive nella tabella `IndexedDb` <span style="color:red;">sync-txPool</span> l'id della transazione 
+- Scrive nella tabella `IndexedDb` <span style="color:red;">sync-txPool</span> l'id della transazione
 - Registra nel SW l'evento di sincronizzazione <span style="color:green;">sync-txPool</span> che abbiamo già spiegato nella funzione <span style="color:blue;">blockchain.sync</span>
-- Chiama la funzione <span style="color:blue;">eth.isTxInIndexedDB</span> che abbiamo già spiegato nella funzione <span style="color:blue;">blockchain.sync</span> 
+- Chiama la funzione <span style="color:blue;">eth.isTxInIndexedDB</span> che abbiamo già spiegato nella funzione <span style="color:blue;">blockchain.sync</span>
 
 
 
@@ -847,16 +847,16 @@ if (event.tag === 'sync-send-erc20') {
 Nel controller a seguito della chiamata alla funzione <span style="color:brown;">WalletERC20/send</span> vengono effettuate le operazioni seguenti:
 
 - Viene creata la transazione con smart contract
-- Viene firmata la transazione con i dati inviati via POST 
+- Viene firmata la transazione con i dati inviati via POST
 - Viene creata sul db una riga contenente i dati della transazione token
 - Viene trasmessa la transazione token sulla blockchain
-- Viene aggiornata la transazione sul db con le informazioni ricevute dalla blockchain 
+- Viene aggiornata la transazione sul db con le informazioni ricevute dalla blockchain
 - Viene salvato il messaggio di notifica e inviato tramite funzione Push
 - Si restituiscono le informazioni in formato json alla chiamata del SW
 
 
-
+<div style="page-break-after: always;"></div>
 ##### Workflow Send
 
 
-![img](https://github.com/napoliblockchain/napay-docs/blob/master/docs/images/send-workflow.png)
+![img](send-workflow.png)
