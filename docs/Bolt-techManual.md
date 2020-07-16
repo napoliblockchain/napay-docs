@@ -84,10 +84,10 @@ file: `protected/Controllers/WalletController.php`
 // carico il wallet selezionato nei settings
 $settings=Settings::loadUser(Yii::app()->user->objUser['id_user']);
 if (empty($settings->id_wallet)){
-	$from_address = '0x0000000000000000000000000000000000000000';
+  $from_address = '0x0000000000000000000000000000000000000000';
 }else{
-	$wallet = Wallets::model()->findByPk($settings->id_wallet);
-	$from_address = $wallet->wallet_address;
+  $wallet = Wallets::model()->findByPk($settings->id_wallet);
+  $from_address = $wallet->wallet_address;
 }
 $modelc->from_address = $from_address;
 ```
@@ -99,10 +99,10 @@ Carico i contatti
 $criteria = new CDbCriteria();
 $criteria->compare('id_user',Yii::app()->user->objUser['id_user'],false);
 $dataProvider=new CActiveDataProvider('Contacts',array(
-	'criteria' => $criteria,
-	'pagination' => array(
-		'pageSize' => 10,
-	),
+  'criteria' => $criteria,
+  'pagination' => array(
+    'pageSize' => 10,
+  ),
 ));
 
 ```
