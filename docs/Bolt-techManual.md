@@ -17,6 +17,7 @@
 
 <div style="page-break-after: always;"></div>
 #### Il pattern MVC
+
 Il software Bolt è costituito da parti di programma in php ed altre parti in Java e html. Viene utilizzato il framework Yii nella versione 1.1.20 per cui l'architettura è formata dal pattern MVC (Model-View-Controller) secondo l'immagine seguente:
 
 
