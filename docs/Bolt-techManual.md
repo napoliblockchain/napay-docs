@@ -16,7 +16,7 @@
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Il pattern MVC
 
 Il software Bolt è costituito da parti di programma in php ed altre parti in Java e html. Viene utilizzato il framework Yii nella versione 1.1.20 per cui l'architettura è formata dal pattern MVC (Model-View-Controller) secondo l'immagine seguente:
@@ -39,7 +39,7 @@ Viene, inoltre, utilizzato `l'indexedDb`, lo storage locale del browser, al cui 
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Il modulo di Login
 
 Il login all'applicazione può essere effettuato in quattro diverse modalità. La soluzione classica è quella di effettuare la registrazione di username e password ed usare queste due componenti per utilizzare il wallet. È stato previsto anche l'utilizzo di social per effettuare il login ed in particolare si possono usare gli account social di:
@@ -75,7 +75,7 @@ $paese = strtoupper($sourceLanguage[1]);
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Il controller del wallet
 
 Andiamo ora a vedere come è gestita la creazione/verifica del wallet a seconda che si utilizzi il software per la prima volta o in quelle successive.
@@ -116,11 +116,11 @@ Quindi viene richiesto di mostrare la schermata principale del wallet con le inf
 ```php
 // visualizzo la schermata
 $this->render('index',array(
-	'modelc'=>$modelc, //lista transazioni tokens
-	'walletForm'=>$walletForm, //form per invio dati
-	'from_address'=>$from_address, // indirizzo del wallet dell'utente
-	'actualBlockNumberDec' => eth::latestBlockNumberDec(), // blocco attuale su blockchain
-	'dataProvider' => $dataProvider, // lista contatti
+  'modelc'=>$modelc, //lista transazioni tokens
+  'walletForm'=>$walletForm, //form per invio dati
+  'from_address'=>$from_address, // indirizzo del wallet dell'utente
+  'actualBlockNumberDec' => eth::latestBlockNumberDec(), // blocco attuale su blockchain
+  'dataProvider' => $dataProvider, // lista contatti
 ));
 ```
 
@@ -128,7 +128,7 @@ Finora il software ha lavorato lato server.
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### La view principale (wallet/index)
 
 La view mostra la maschera principale e carica diversi file Java. In Yii è possibile generare dinamicamente i file Java, cosa molto utile perché così è possibile modificarne i parametri a seconda delle diverse richieste di funzionamento.
@@ -140,8 +140,8 @@ file: `protected/views/wallet/index.php.php`
 
 <?php
 $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'wallet-form',
-	'enableAjaxValidation'=>false,
+  'id'=>'wallet-form',
+  'enableAjaxValidation'=>false,
 ));
 
 //richiamo tutte le funzioni javascript
@@ -168,36 +168,36 @@ var isEquel = null;
 var my_address;
 
 readFromId('wallet',"{$from_address}")
-    .then(function(data) {
-        if (typeof data[0] !== 'undefined') {
-            for (var dt of data) {
-                if (null === data.id){
-                    $('#initializeWallet').modal({backdrop: 'static',keyboard: false});
-                    break;
-                }else{
-                    var address_1 = new String("{$from_address}");
-                    var iduser_1 = new String(cryptedIdUser);
-                    var address_2 = new String(dt.id);
-                    var iduser_2 = new String(dt.id_user);
-                    isEquel_1 = JSON.stringify(address_1) === JSON.stringify(address_2);
-                    isEquel_2 = JSON.stringify(iduser_1) === JSON.stringify(iduser_2);
-                    isEquel = isEquel_1 * isEquel_2;
-                }
-                if ( isEquel ){
-                    /*  START 	*/
-                    my_address = data[0].id;
-                    break;
-                }else{
-                    $('#initializeWallet').modal({backdrop: 'static',keyboard: false});
-                    break;
-                }
-            }
-            ...
+  .then(function(data) {
+    if (typeof data[0] !== 'undefined') {
+      for (var dt of data) {
+        if (null === data.id){
+          $('#initializeWallet').modal({backdrop: 'static',keyboard: false});
+          break;
+        }else{
+          var address_1 = new String("{$from_address}");
+          var iduser_1 = new String(cryptedIdUser);
+          var address_2 = new String(dt.id);
+          var iduser_2 = new String(dt.id_user);
+          isEquel_1 = JSON.stringify(address_1) === JSON.stringify(address_2);
+          isEquel_2 = JSON.stringify(iduser_1) === JSON.stringify(iduser_2);
+          isEquel = isEquel_1 * isEquel_2;
+        }
+        if ( isEquel ){
+          /*  START 	*/
+          my_address = data[0].id;
+          break;
+        }else{
+          $('#initializeWallet').modal({backdrop: 'static',keyboard: false});
+          break;
+        }
+      }
+      ...
 ```
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Generazione del seed
 
 Viene visualizzata una finestra Modal dove inserire e/o generare un nuovo seed. La pagina di layout (`protected/views/layout/main.php`) carica il file Javascript lightwallet.min.js (https://github.com/ConsenSys/eth-lightwallet) che è, in breve, la libreria che permette la generazione e il salvataggio delle chiavi private ethereum.
@@ -235,7 +235,6 @@ $("button[id='cryptConferma']").click(function(){
 
 	// la password viene generata in automatico dal sistema
 	var password = generateEntropy(32);
-
 	initializeVault(password,seed);
 });
 ```
@@ -263,9 +262,9 @@ function initializeVault(password, seed) {
 		},
 		dataType: "json",
 		success:function(data){
-			var pwd_crypted  = data.cryptedpass;
-			var seed_crypted  = data.cryptedseed;
-			var iduser_crypted  = data.cryptediduser;
+			var pwd_crypted = data.cryptedpass;
+			var seed_crypted = data.cryptedseed;
+			var iduser_crypted = data.cryptediduser;
 			lw.keystore.createVault({
 			    password: password,
 			    seedPhrase: seed,
@@ -276,41 +275,39 @@ function initializeVault(password, seed) {
 				            throw new Error("Incorrect derived key!");
 				        }
 				        try {
-				            ks.generateNewAddress(pwDerivedKey, 1);
+				          ks.generateNewAddress(pwDerivedKey, 1);
 				        } catch (err) {
-				            console.log(err);
-				            console.trace();
+				          console.log(err);
+				          console.trace();
 				        }
 				        var address = ks.getAddresses()[0];
 				        var prv_key = ks.exportPrivateKey(address, pwDerivedKey);
-						var post = {
-							id			: address, // id of indexedDB
-							id_user		: iduser_crypted,
-							prv_php 	: CryptoJS.AES.encrypt(JSON.stringify(prv_key), password, {format: CryptoJSAesJson}).toString(),
-							prv_pas		: pwd_crypted,
-						};
-						writeData('wallet', post)
-							.then(function() {
-								//save at mysql a user's wallet address
-								$.ajax({
-									url:'{$saveAddress}',
-									type: "POST",
-									data: {'address': address},
-									dataType: "json",
-									success:function(data){
-										var post2 = {
-											id : new Date().toISOString(), // id of indexedDB
-											cryptedseed : seed_crypted,
-										}
-										writeData('mseed', post2)
-										.then(function() {
-											setTimeout(function(){ location.reload() }, 250);
-										});
-									},
-									error: function(j){
-										console.log('error',j);
-									}
-								});
+    						var post = {
+    							id			: address, // id of indexedDB
+    							id_user		: iduser_crypted,
+    							prv_php 	: CryptoJS.AES.encrypt(JSON.stringify(prv_key), password, {format: CryptoJSAesJson}).toString(),
+    							prv_pas		: pwd_crypted,
+    						};
+                writeData('wallet', post).then(function() {
+  								//save at mysql a user's wallet address
+  								$.ajax({
+  									url:'{$saveAddress}',
+  									type: "POST",
+  									data: {'address': address},
+  									dataType: "json",
+  									success:function(data){
+  										var post2 = {
+  											id : new Date().toISOString(), // id of indexedDB
+  											cryptedseed : seed_crypted,
+  										}
+  										writeData('mseed', post2).then(function() {
+  											setTimeout(function(){ location.reload() }, 250);
+  										});
+  									},
+  									error: function(j){
+  										console.log('error',j);
+  									}
+  								});
 							})
 							.catch(function(err) {
 								console.log(err);
@@ -328,7 +325,7 @@ function initializeVault(password, seed) {
 ```
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Seed già generato e address trovato negli User Settings
 
 Quando l'utente effettua il login, abbiamo visto che il software controlla se nell'indexedDb è presente lo stesso address salvato nei settings dell'user richiamando, in caso di diversità, il processo di generazione del seed. Nel caso in cui siano uguali vengono richiamati i processi che possiamo anche vedere nel blocco di codice che segue:
@@ -360,7 +357,7 @@ Vengono poi chiamate due funzioni che sincronizzano la blockchain in questo modo
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Funzione erc20.Balance
 
 file: `*protected/controllers/WalletERC20Controller.php*`
@@ -392,36 +389,34 @@ public function actionGetBalance(){
 		$utils = $web3->utils;
 
 		$contract->at($settings->poa_contractAddress)->call('balanceOf', $my_address, [
-	            'from' => $my_address
-	        ], function ($err, $result) use ($contract, $utils) {
-                if ($err !== null) {
-                    echo CJSON::encode(array(
-                        "error"=>$err->getMessage(),
-                        'id'=>time()
-                    ));
-                    exit;
-                }
-
-                if (isset($result)) {
-                    $value = $utils->fromWei($result[0]->value, 'ether');
-                    $Value0 = (string) $value[0]->value;
-                    $Value1 = (float) $value[1]->value / pow(10, self::getDecimals());
-
-                    self::setbalance($Value0 + $Value1);
-                }
+        'from' => $my_address
+	    ], function ($err, $result) use ($contract, $utils) {
+          if ($err !== null) {
+              echo CJSON::encode(array(
+                  "error"=>$err->getMessage(),
+                  'id'=>time()
+              ));
+              exit;
+          }
+          if (isset($result)) {
+              $value = $utils->fromWei($result[0]->value, 'ether');
+              $Value0 = (string) $value[0]->value;
+              $Value1 = (float) $value[1]->value / pow(10, self::getDecimals());
+              self::setbalance($Value0 + $Value1);
+          }
 	    });
 	}
 	$send_json = array(
 		'balance' => self::getBalance(),
 		'id'=> $my_address,
 	);
-    echo CJSON::encode($send_json);
+  echo CJSON::encode($send_json);
 }
 ```
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Funzione eth.Balance
 
 file: *`protected/controllers/WalletETHController.php*`
@@ -453,7 +448,7 @@ public function actionGetBalance(){
 		$eth = $web3->eth;
 		$balance = 0;
 
-        //recupero il balance
+    // recupero il balance
 		$web3->eth->getBalance($my_address, function ($err, $balance){
 			if ($err !== null) {
 				echo CJSON::encode(array(
@@ -476,7 +471,7 @@ public function actionGetBalance(){
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Funzione blockchain.sync
 
 file: `*protected/controllers/BlockchainController.php*`
@@ -527,31 +522,29 @@ Il SW intercetta l'evento di sincronizzazione <span style="color:green;">sync-tx
   ```javascript
   // SINCRONIZZAZIONE RICEZIONE
   if (event.tag === 'sync-txPool') {
-      event.waitUntil(
-          readAllData(event.tag)
-          .then(function(data) {
-              for (var dt of data) {
-                 var postData = new FormData();
-                 postData.append('id_token', dt.id_token);
-
-                 fetch(dt.url, {
-                      method: 'POST',
-                      body: postData,
-                 })
-                 .then(function(response) {
-                      return response.json();
-                 })
-                 .then(function(json) {
-                      writeData('np-txPool', json);
-                 })
-                 .catch(function(err){
-                    console.log('[Service worker] Error while checking pool data', err);
-                 })
-              }
-              //per sicurezza cancello tutto da indexedDB
-              clearAllData(event.tag);
-           })
-       );
+    event.waitUntil(
+      readAllData(event.tag).then(function(data) {
+        for (var dt of data) {
+          var postData = new FormData();
+          postData.append('id_token', dt.id_token);
+          fetch(dt.url, {
+            method: 'POST',
+            body: postData,
+          })
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(json) {
+            writeData('np-txPool', json);
+          })
+          .catch(function(err){
+            console.log('[Service worker] Error while checking pool data', err);
+          })
+        }
+        // per sicurezza cancello tutto da indexedDB
+        clearAllData(event.tag);
+      })
+    );
   }
   ```
 
@@ -583,15 +576,15 @@ Nel controller a seguito della chiamata alla funzione <span style="color:red;">W
       $wallets = Wallets::model()->findByAttributes(['id_user'=>Yii::app()->user->objUser['id_user']]);
 
       echo CJSON::encode(array(
-          'id' => time(), //NECESSARIO PER IL SALVATAGGIO IN  indexedDB quando ritorna al Service Worker
-          "status"=>$model->status,
-          "status_wlink"=>WebApp::translateMsg($model->status),
-          "openUrl"=>Yii::app()->createUrl('tokens/view',array('id'=>crypt::Encrypt($model->id_token))), // url per i messaggi push
-          'to_address'=>$model->to_address,
-          'from_address'=>$model->from_address,
-          'token_price'=>$model->token_price,
-          'token_price_wsymbol' => WebApp::typePrice($model->token_price,($model->from_address == $wallets->wallet_address ? 'sent' : 'received')),
-          'id_token'=>$_POST['id_token'],
+        'id' => time(), //NECESSARIO PER IL SALVATAGGIO IN  indexedDB quando ritorna al Service Worker
+        "status"=>$model->status,
+        "status_wlink"=>WebApp::translateMsg($model->status),
+        "openUrl"=>Yii::app()->createUrl('tokens/view',array('id'=>crypt::Encrypt($model->id_token))), // url per i messaggi push
+        'to_address'=>$model->to_address,
+        'from_address'=>$model->from_address,
+        'token_price'=>$model->token_price,
+        'token_price_wsymbol' => WebApp::typePrice($model->token_price,($model->from_address == $wallets->wallet_address ? 'sent' : 'received')),
+        'id_token'=>$_POST['id_token'],
       ));
   }
   ```
@@ -615,37 +608,34 @@ La funzione <span style="color:blue;">eth.isTxInIndexedDB</span> si occupa di le
     ```javascript
     // verifica che ci siano transaz. in indexedDB
     isTxInIndexedDB: function(id_token){
-        readAllData('np-txPool')
-        .then(function(data) {
-            if (typeof data[0] !== 'undefined') {
-                clearAllData('np-txPool');
-                eth.responseTxPool(data[0]);
-            }
-            else {
-                maxRepeat ++;
-                if (maxRepeat <7200)
-                    setTimeout(function(){ eth.isTxInIndexedDB(id_token) }, 50);
-            }
-        });
+      readAllData('np-txPool').then(function(data){
+        if (typeof data[0] !== 'undefined') {
+          clearAllData('np-txPool');
+          eth.responseTxPool(data[0]);
+        }else {
+          maxRepeat ++;
+          if (maxRepeat <7200)
+            setTimeout(function(){ eth.isTxInIndexedDB(id_token) }, 50);
+        }
+      });
     },
 
     // analizza la risposta da txpool
     responseTxPool: function(data){
-        console.log('[ResponseTxPool]: (check if exist id_token) ',data);
-        if (data.status !== 'new'){
-            // modify DOM
-    		...
-            // set Push Message
-            displayNotification(options);
+      if (data.status !== 'new'){
+        // modify DOM
+  		...
+        // set Push Message
+        displayNotification(options);
 
-            setTimeout(function(){
-                erc20.Balance('{$from_address}')
-            }, 1000);
-        }else{
-            setTimeout(function() {
-                eth.txFound(data.id_token);
-            }, 1000);
-        }
+        setTimeout(function(){
+          erc20.Balance('{$from_address}')
+        }, 1000);
+      }else{
+        setTimeout(function() {
+          eth.txFound(data.id_token);
+        }, 1000);
+      }
     },
     ```
 
@@ -655,7 +645,7 @@ La funzione <span style="color:blue;">eth.isTxInIndexedDB</span> si occupa di le
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Servizio WT (watch tower)
 
 file: `protected/commands/wtCommand.php`
@@ -670,7 +660,7 @@ Abbiamo visto che quando entro nel wallet la funzione <span style="color:blue;">
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 #### Funzione erc20.Send
 
 file: *`protected/controllers/WalletERC20Controller.php*`
@@ -687,47 +677,45 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
   var isAddressChecked = false;
   //check if valid address is in cache
   if ('indexedDB' in window) {
-      readAllData('np_checkaddress')
-      .then(function(data) {
-           for (var dt of data) {
-              if (dt.id == $('#WalletTokenForm_to').val()){
-                  if (dt.response != true){
-                      $('#WalletForm_to_em_').show();
-                      $('#WalletForm_to_em_').text(Yii.t('js','Wrong destination address.'));
-                      flagError = true;
-                  }else{
-                      isAddressChecked = true;
-                      $('#WalletForm_to_em_').hide();
-                  }
-              }
+    readAllData('np_checkaddress').then(function(data) {
+      for (var dt of data) {
+        if (dt.id == $('#WalletTokenForm_to').val()){
+          if (dt.response != true){
+            $('#WalletForm_to_em_').show();
+            $('#WalletForm_to_em_').text(Yii.t('js','Wrong destination address.'));
+            flagError = true;
+          }else{
+            isAddressChecked = true;
+            $('#WalletForm_to_em_').hide();
           }
+        }
+      }
       });
   }
   if (!isAddressChecked){
-     $.ajax({
-          url:'{$urlCheckAddress}',
-          type: "POST",
-          data:{
-              'to'	: $('#WalletTokenForm_to').val(),
-          },
-          dataType: "json",
-          success:function(data){
-              if (data.response===true){
-                  $('#WalletForm_to_em_').hide();
-                  prosegui();
-              }else{
-                  $('#WalletForm_to_em_').show();
-                  $('#WalletForm_to_em_').text(Yii.t('js','Wrong destination address.'));
-                  flagError = true;
-              }
-          },
-          error: function(j){
-              var json = jQuery.parseJSON(j.responseText);
-              $('#WalletForm_to_em_').show();
-              $('#WalletForm_to_em_').text(Yii.t('js','Unable to verify destination address.'));
-              flagError = true;
-          }
-      });
+    $.ajax({
+      url:'{$urlCheckAddress}',
+      type: "POST",
+      data:{
+        'to'	: $('#WalletTokenForm_to').val(),
+      },
+      dataType: "json",
+      success:function(data){
+        if (data.response===true){
+          $('#WalletForm_to_em_').hide();
+          prosegui();
+        }else{
+          $('#WalletForm_to_em_').show();
+          $('#WalletForm_to_em_').text(Yii.t('js','Wrong destination address.'));
+          flagError = true;
+        }
+      },
+      error: function(j){
+        $('#WalletForm_to_em_').show();
+        $('#WalletForm_to_em_').text(Yii.t('js','Unable to verify destination address.'));
+        flagError = true;
+      }
+    });
   }
   ```
 
@@ -735,21 +723,21 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
 
   ```javascript
   $.ajax({
-      url:'{$urlEstimateGas}',
-      type: "POST",
-      data:{
-          'from'		: $('#WalletTokenForm_from').val(),
-          'to'		: $('#WalletTokenForm_to').val(),
-          'amount'	: $('#WalletTokenForm_amount').val(),
-      },
-      dataType: "json",
-      success:function(data){
-          gasPrice = data.gasPrice;
-          showProsegui();
-      },
-      error: function(j){
-          console.log(j);
-      }
+    url:'{$urlEstimateGas}',
+    type: "POST",
+    data:{
+      'from'		: $('#WalletTokenForm_from').val(),
+      'to'		: $('#WalletTokenForm_to').val(),
+      'amount'	: $('#WalletTokenForm_amount').val(),
+    },
+    dataType: "json",
+    success:function(data){
+      gasPrice = data.gasPrice;
+      showProsegui();
+    },
+    error: function(j){
+      console.log(j);
+    }
   });
   ```
 
@@ -776,27 +764,26 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
   ```javascript
   // controlla se il db di ricezione indexedDB è stato preparato dal service worker
   isReadySent: function(suffix){
-      readAllData('np-send-'+suffix)
-          .then(function(data) {
-              if (typeof data[0] !== 'undefined') {
-                  if (data[0].error){
-                      $('.sufee-alert').show().addClass( "alert alert-warning" );
-                      $('#errorMessageOnSend').html('<small>'+data[0].error+'</small>');
-                      $('#errorMessage').html('<small>'+data[0].error+'</small>');
-                  }else{
-                      $('#tokenConfirm').show();
-                      $('.bitpay-pairing__loading').remove();
-                      $('#scrollmodalGas').modal('hide');
-                      for (var dt of data) {
-                          eth.addNewRow(dt);
-                          eth.txFound(dt.id_token);
-                      }
-                  }
-                  clearAllData('np-send-'+suffix);
-              } else {
-                  setTimeout(function(){ eth.isReadySent(suffix) }, 500);
-              }
-          });
+    readAllData('np-send-'+suffix).then(function(data) {
+      if (typeof data[0] !== 'undefined') {
+        if (data[0].error){
+          $('.sufee-alert').show().addClass( "alert alert-warning" );
+          $('#errorMessageOnSend').html('<small>'+data[0].error+'</small>');
+          $('#errorMessage').html('<small>'+data[0].error+'</small>');
+        }else{
+          $('#tokenConfirm').show();
+          $('.bitpay-pairing__loading').remove();
+          $('#scrollmodalGas').modal('hide');
+          for (var dt of data) {
+            eth.addNewRow(dt);
+            eth.txFound(dt.id_token);
+          }
+        }
+        clearAllData('np-send-'+suffix);
+      }else{
+        setTimeout(function(){ eth.isReadySent(suffix) }, 500);
+      }
+  });
   },
   ```
 
@@ -820,38 +807,37 @@ Il SW intercetta l'evento di sincronizzazione <span style="color:green;">sync-se
 ```javascript
 // SINCRONIZZAZIONE INVIO
 if (event.tag === 'sync-send-erc20') {
-    event.waitUntil(
-        readAllData(event.tag)
-            .then(function(data) {
-                for (var dt of data) {
-                    var postData = new FormData();
-                        postData.append('from', dt.from);
-                        postData.append('to', dt.to);
-                        postData.append('gas', dt.gas);
-                        postData.append('amount', dt.amount);
-                        postData.append('memo', dt.memo);
-                        postData.append('prv_key', dt.prv_key);
-                        postData.append('prv_pas', dt.prv_pas);
+  event.waitUntil(
+    readAllData(event.tag).then(function(data) {
+      for (var dt of data) {
+        var postData = new FormData();
+            postData.append('from', dt.from);
+            postData.append('to', dt.to);
+            postData.append('gas', dt.gas);
+            postData.append('amount', dt.amount);
+            postData.append('memo', dt.memo);
+            postData.append('prv_key', dt.prv_key);
+            postData.append('prv_pas', dt.prv_pas);
 
-                    fetch(dt.url, {
-                        method: 'POST',
-                        body: postData,
-                    })
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(json) {
-                         writeData('np-send-'+suffix, json);
-                    })
-                    .catch(function(err){
-                        console.log('[Service worker] Error while sending data', err);
-                    })
-                }
-                //per sicurezza cancello tutto da indexedDB
-                clearAllData(event.tag);
-             })
-     );
- }
+        fetch(dt.url, {
+          method: 'POST',
+          body: postData,
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(json) {
+          writeData('np-send-'+suffix, json);
+        })
+        .catch(function(err){
+          console.log('[Service worker] Error while sending data', err);
+        })
+      }
+      //per sicurezza cancello tutto da indexedDB
+      clearAllData(event.tag);
+   })
+  );
+}
 ```
 
 
@@ -868,7 +854,7 @@ Nel controller a seguito della chiamata alla funzione <span style="color:brown;"
 
 
 <div style="page-break-after: always;"></div>
-
+</br>
 ##### Workflow Send
 
 
