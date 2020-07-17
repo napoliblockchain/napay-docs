@@ -17,6 +17,7 @@
 
 <div style="page-break-after: always;"></div>
 
+
 #### Il pattern MVC
 
 Il software Bolt è costituito da parti di programma in php ed altre parti in Java e html. Viene utilizzato il framework Yii nella versione 1.1.20 per cui l'architettura è formata dal pattern MVC (Model-View-Controller) secondo l'immagine seguente:
@@ -27,6 +28,14 @@ Il software Bolt è costituito da parti di programma in php ed altre parti in Ja
 ![img](patternMVC.jpg)
 
 
+
+Utilizzo il Framework yii perchè:
+1. E' basato sul modello MVC
+2. La gestione degli errori è molto semplice
+3. Esiste una grande comunità per il supporto tecnico
+4. Supporta il layered data caching, fragment caching, page caching, e il contenuto dinamico. Il supporto di memorizzazione nella cache può essere modificato
+5. Migrazione dei dati semplificata
+6. Caratteristiche di sicurezza
 
 Normalmente, salvo forzature, nel controller e nel model viene gestita la programmazione php, mentre nelle view viene gestito il codice Javascript.
 Il software è modulare, pertanto si possono estrarre singole porzioni che possono essere implementate o modificate a seconda delle proprie necessità.
@@ -51,6 +60,7 @@ Il login all'applicazione può essere effettuato in quattro diverse modalità. L
 Le librerie per l'utilizzo di questi social ho pensato di non integrarle, ma di creare un repository esterno che ho chiamato [**libs/oauth**](https://bitbucket.org/jambtc/libs/src/master/oauth/) così da poterle utilizzare anche per altre applicazioni. Ecco un esempio di utilizzo della libreria:
 
 ```php
+<?php
 include ('js_login.php');
 include ('js_google.php');
 include ('js_facebook.php');
@@ -82,9 +92,10 @@ Andiamo ora a vedere come è gestita la creazione/verifica del wallet a seconda 
 
 Una volta effettuato il login tramite il modulo di Login, il walletController verifica se nella tabella `bolt_wallets` (gestita dalla classe protected\models\Wallet.php) è presente un address appartenente allo user connesso. Se non è presente inizializza la variabile *$from_address* al valore di 0x00...  altrimenti assegna il valore caricandolo dal db.
 
-file: `protected/Controllers/WalletController.php`
+file: *`protected/Controllers/WalletController.php`*
 
 ```php
+<?php
 // carico il wallet selezionato nei settings
 $settings=Settings::loadUser(Yii::app()->user->objUser['id_user']);
 if (empty($settings->id_wallet)){
@@ -99,6 +110,7 @@ $modelc->from_address = $from_address;
 Carico i contatti
 
 ```php
+<?php
 // carico i contatti dell'utente
 $criteria = new CDbCriteria();
 $criteria->compare('id_user',Yii::app()->user->objUser['id_user'],false);
@@ -114,6 +126,7 @@ $dataProvider=new CActiveDataProvider('Contacts',array(
 Quindi viene richiesto di mostrare la schermata principale del wallet con le informazioni necessarie al suo corretto funzionamento.
 
 ```php
+<?php
 // visualizzo la schermata
 $this->render('index',array(
   'modelc'=>$modelc, //lista transazioni tokens
@@ -133,7 +146,7 @@ Finora il software ha lavorato lato server.
 
 La view mostra la maschera principale e carica diversi file Java. In Yii è possibile generare dinamicamente i file Java, cosa molto utile perché così è possibile modificarne i parametri a seconda delle diverse richieste di funzionamento.
 
-file: `protected/views/wallet/index.php.php`
+file: *`protected/views/wallet/index.php.php`*
 
 ```php
 <div class="form">
@@ -154,7 +167,7 @@ include ('js_qr-scanner.php');
 include ('js_nfc.php');
 ```
 
-Il file che gestisce la generazione del seed è `protected/views/wallet/js_walletInitialize.php`
+Il file che gestisce la generazione del seed è *`protected/views/wallet/js_walletInitialize.php`*
 
 Una funzione  interviene per verificare che all'interno dello storage del browser ci sia salvato l'address inviato dal Controller e reagisce in questo modo:
 
@@ -200,127 +213,127 @@ readFromId('wallet',"{$from_address}")
 
 #### Generazione del seed
 
-Viene visualizzata una finestra Modal dove inserire e/o generare un nuovo seed. La pagina di layout (`protected/views/layout/main.php`) carica il file Javascript lightwallet.min.js (https://github.com/ConsenSys/eth-lightwallet) che è, in breve, la libreria che permette la generazione e il salvataggio delle chiavi private ethereum.
+Viene visualizzata una finestra Modal dove inserire e/o generare un nuovo seed. La pagina di layout *`protected/views/layout/main.php`* carica il file Javascript lightwallet.min.js (https://github.com/ConsenSys/eth-lightwallet) che è, in breve, la libreria che permette la generazione e il salvataggio delle chiavi private ethereum.
 
 
 
-La funzione <span style="color:blue;">keystore.generateRandomSeed</span> genera un seed con entropia casuale di lunghezza variabile da 1000 a 2000 caratteri.
+La funzione <span style="color:blue;">**keystore.generateRandomSeed()**</span> genera un seed con entropia casuale di lunghezza variabile da 1000 a 2000 caratteri.
 
 ```javascript
 // questa funzione genera il nuovo seed del wallet
 function newWallet()
 {
-	seed = lw.keystore.generateRandomSeed(generateEntropy(Math.floor(Math.random() * 1001)+1000));
-	testo = "<p class='alert alert-light text-danger'><strong>"+seed+"</strong></p>";
-	testo += Yii.t('js',"<b>Write the seed and keep it in a safe place; if you lose it you will not be able to restore your wallet and you will lose all the funds.</b>");
+  seed = lw.keystore.generateRandomSeed(generateEntropy(Math.floor(Math.random() * 1001)+1000));
+  testo = "<p class='alert alert-light text-danger'><strong>"+seed+"</strong></p>";
+  testo += Yii.t('js',"<b>Write the seed and keep it in a safe place; if you lose it you will not be able to restore your wallet and you will lose all the funds.</b>");
 
-	$('#seedText').html(testo);
-	$('#seedInput').val(seed);
+  $('#seedText').html(testo);
+  $('#seedInput').val(seed);
 }
 ```
 
-Premendo il pulsante di salvataggio del seed, viene verificata la validità dello stesso e la funzione <span style="color:blue;">generateEntropy</span> genera anche una password di 32 caratteri per criptare il seed prima di effettuare la chiamata alla funzione <span style="color:blue;">initializeVault</span> che inizializza il wallet.
+Premendo il pulsante di salvataggio del seed, viene verificata la validità dello stesso e la funzione <span style="color:blue;">**generateEntropy()**</span> genera anche una password di 32 caratteri per criptare il seed prima di effettuare la chiamata alla funzione <span style="color:blue;">**initializeVault()**</span> che inizializza il wallet.
 
 ```javascript
 // verifico validità del seed
 $("button[id='cryptConferma']").click(function(){
-	var seed = $('#seedInput').val();
-	var confirm_seed = $('#repeat_seed').val();
+  var seed = $('#seedInput').val();
+  var confirm_seed = $('#repeat_seed').val();
 
-	if (WordCount(confirm_seed) != 12 || !(isSeedValid(confirm_seed)) || confirm_seed != seed){
-		$('#repeat_seed_em_').show().text(Yii.t('js','Invalid Seed!'));
-		return;
-	}
-	$('#repeat_seed_em_').hide().text('');
+  if (WordCount(confirm_seed) != 12 || !(isSeedValid(confirm_seed)) || confirm_seed != seed){
+    $('#repeat_seed_em_').show().text(Yii.t('js','Invalid Seed!'));
+    return;
+  }
+  $('#repeat_seed_em_').hide().text('');
 
-	// la password viene generata in automatico dal sistema
-	var password = generateEntropy(32);
-	initializeVault(password,seed);
+  // la password viene generata in automatico dal sistema
+  var password = generateEntropy(32);
+  initializeVault(password,seed);
 });
 ```
 
-Nella funzione <span style="color:blue;">initializeVault</span>:
+Nella funzione <span style="color:blue;">**initializeVault()**</span>:
 
-- La password e il seed vengono criptati e viene richiamata la funzione <span style="color:blue;">keystore.createVault</span>.
+- La password e il seed vengono criptati e viene richiamata la funzione <span style="color:blue;">**keystore.createVault()**</span>.
 - Dalla password e dal seed viene estratta la Derived Key con cui viene generato ed estratto l'address n. 0
 - Con address e derived key viene  esportata la chiave privata
-- Address e chiave privata criptata vengono salvati in indexedDb del browser nella tabella wallet.
-- Address viene salvato nella tabella mysql bolt_wallets
-- id_address relativo alla tabella bolt_wallets viene salvato nei settings dell'user
-- Il seed viene salvato criptato in indexedDb del browser nella tabella mseed
+- Address e chiave privata criptata vengono salvati in `indexedDb` del browser nella tabella wallet.
+- Address viene salvato nella tabella mysql **bolt_wallets**
+- *id_address* relativo alla tabella **bolt_wallets** viene salvato nei settings dell'user
+- Il seed viene salvato criptato in `indexedDb` del browser nella tabella **<span style="color:red;">mseed</span>**
 - La pagina viene ricaricata e si ripete il processo dall'inizio
 
 ```javascript
 // adesso salviamo in local storage il seed e la password
 function initializeVault(password, seed) {
-	$.ajax({
-		url:'{$cryptURL}',
-		type: "POST",
-		data: {
-			'pass': password,
-			'seed': seed
-		},
-		dataType: "json",
-		success:function(data){
-			var pwd_crypted = data.cryptedpass;
-			var seed_crypted = data.cryptedseed;
-			var iduser_crypted = data.cryptediduser;
-			lw.keystore.createVault({
-			    password: password,
-			    seedPhrase: seed,
-			    hdPathString: "m/0'/0'/0'"
-				}, function (err, ks) {
-				    ks.keyFromPassword(password, function (err, pwDerivedKey) {
-				        if (!ks.isDerivedKeyCorrect(pwDerivedKey)) {
-				            throw new Error("Incorrect derived key!");
-				        }
-				        try {
-				          ks.generateNewAddress(pwDerivedKey, 1);
-				        } catch (err) {
-				          console.log(err);
-				          console.trace();
-				        }
-				        var address = ks.getAddresses()[0];
-				        var prv_key = ks.exportPrivateKey(address, pwDerivedKey);
-    						var post = {
-    							id			: address, // id of indexedDB
-    							id_user		: iduser_crypted,
-    							prv_php 	: CryptoJS.AES.encrypt(JSON.stringify(prv_key), password, {format: CryptoJSAesJson}).toString(),
-    							prv_pas		: pwd_crypted,
-    						};
-                writeData('wallet', post).then(function() {
-  								//save at mysql a user's wallet address
-  								$.ajax({
-  									url:'{$saveAddress}',
-  									type: "POST",
-  									data: {'address': address},
-  									dataType: "json",
-  									success:function(data){
-  										var post2 = {
-  											id : new Date().toISOString(), // id of indexedDB
-  											cryptedseed : seed_crypted,
-  										}
-  										writeData('mseed', post2).then(function() {
-  											setTimeout(function(){ location.reload() }, 250);
-  										});
-  									},
-  									error: function(j){
-  										console.log('error',j);
-  									}
-  								});
-							})
-							.catch(function(err) {
-								console.log(err);
-							});
-				    });
-				});
-			// Quindi, chiedo di installare la webapp sulla home del cell
-			saveOnDesktop();
-		},
-		error: function(j){
-			console.log('error',j);
-		}
-	});
+  $.ajax({
+    url:'{$cryptURL}',
+    type: "POST",
+    data: {
+    	'pass': password,
+    	'seed': seed
+    },
+    dataType: "json",
+    success:function(data){
+      var pwd_crypted = data.cryptedpass;
+      var seed_crypted = data.cryptedseed;
+      var iduser_crypted = data.cryptediduser;
+      lw.keystore.createVault({
+        password: password,
+        seedPhrase: seed,
+        hdPathString: "m/0'/0'/0'"
+      }, function (err, ks) {
+        ks.keyFromPassword(password, function (err, pwDerivedKey) {
+          if (!ks.isDerivedKeyCorrect(pwDerivedKey)) {
+            throw new Error("Incorrect derived key!");
+          }
+          try {
+            ks.generateNewAddress(pwDerivedKey, 1);
+          } catch (err) {
+            console.log(err);
+            console.trace();
+          }
+          var address = ks.getAddresses()[0];
+          var prv_key = ks.exportPrivateKey(address, pwDerivedKey);
+          var post = {
+            id      : address, // id of indexedDB
+            id_user : iduser_crypted,
+            prv_php : CryptoJS.AES.encrypt(JSON.stringify(prv_key), password, {format: CryptoJSAesJson}).toString(),
+            prv_pas : pwd_crypted,
+          };
+          writeData('wallet', post).then(function() {
+            //save at mysql a user's wallet address
+            $.ajax({
+              url : '{$saveAddress}',
+              type: "POST",
+              data: {'address': address},
+              dataType: "json",
+              success:function(data){
+                var post2 = {
+                  id : new Date().toISOString(), // id of indexedDB
+                  cryptedseed : seed_crypted,
+                }
+                writeData('mseed', post2).then(function() {
+                  setTimeout(function(){ location.reload() }, 250);
+                });
+              },
+              error: function(j){
+                console.log('error',j);
+              }
+            });
+          })
+          .catch(function(err) {
+          	console.log(err);
+          });
+        });
+      });
+      // Quindi, chiedo di installare la webapp sulla home del cell
+      saveOnDesktop();
+    },
+    error: function(j){
+      console.log('error',j);
+    }
+  });
 }
 ```
 
@@ -328,88 +341,94 @@ function initializeVault(password, seed) {
 
 #### Seed già generato e address trovato negli User Settings
 
-Quando l'utente effettua il login, abbiamo visto che il software controlla se nell'indexedDb è presente lo stesso address salvato nei settings dell'user richiamando, in caso di diversità, il processo di generazione del seed. Nel caso in cui siano uguali vengono richiamati i processi che possiamo anche vedere nel blocco di codice che segue:
+Quando l'utente effettua il login, abbiamo visto che il software controlla se nell'`indexedDb` è presente lo stesso address salvato nei settings dell'user richiamando, in caso di diversità, il processo di generazione del seed. Nel caso in cui siano uguali vengono richiamati i processi che possiamo anche vedere nel blocco di codice che segue:
 
 ```javascript
 .then(function() {
-	if (isEquel){
-		backend.checkPin();
-		erc20.Balance(my_address);
-		eth.Balance(my_address);
-		blockchain.sync(my_address);
-		setTimeout(function(){ blockchain.scanForNew(my_address) }, 2000);
-	}
+  if (isEquel){
+    backend.checkPin();
+    erc20.Balance(my_address);
+    eth.Balance(my_address);
+    blockchain.sync(my_address);
+    setTimeout(function(){ blockchain.scanForNew(my_address) }, 2000);
+  }
 });
 ```
 
-Viene eseguita la funzione <span style="color:blue;">backend.checkPin</span> per verificare che sia stato immesso il pin per sbloccare l'applicazione. Anche il pin è salvato in formato criptato nell'`indexedDb` nella tabella pin.
+Viene eseguita la funzione <span style="color:blue;">**backend.checkPin()**</span> per verificare che sia stato immesso il pin per sbloccare l'applicazione. Anche il pin è salvato in formato criptato nell'`indexedDb` nella tabella pin.
 
-Vengono chiamate le funzioni <span style="color:blue;">erc20.Balance</span> e <span style="color:blue;">eth.Balance</span> (inserite nel file js_eth.php) che verificano sulla blockchain il saldo sull'address.
+Vengono chiamate le funzioni <span style="color:blue;">**erc20.Balance()**</span> e <span style="color:blue;">**eth.Balance()**</span> (inserite nel file *`js_eth.php`*) che verificano sulla blockchain il saldo sull'address.
 
 Vengono poi chiamate due funzioni che sincronizzano la blockchain in questo modo:
 
-- <span style="color:blue;">blockchain.sync</span> - ricerca nei nuovi blocchi transazioni in cui sia presente l'address dell'utente. Nelle pagine successive spiegherò nel dettaglio il funzionamento delle funzioni che si interfacciano con la blockchain Ethereum. Per il momento basti sapere che nella nostra POA, generalmente, ciascun blocco viene generato ogni 15 secondi, quindi questa funzione viene richiamata ogni 7 secondi secondo la formula seguente:
-  - (T2 - T1) / E dove
-    - t2-t1 è l'intervallo di tempo di 15 secondi
-    - E è il numero di eventi certi che desideriamo accadano
-    - Quindi abbiamo (15 - 0) / 2 = 7,5 arrotondata a 7 secondi
-- <span style="color:blue;">blockchain.scanForNew</span> - cerca nel db eventuali transazioni nello stato "new" e, nel caso in cui è presente la txhash (hash della transazione), verifica sulla blockchain lo stato della stessa aggiornando di conseguenza il db. Nel caso in cui la txhash è vuota la transazione viene segnalata come "failed". In pratica questa funzione agisce da "resume" nel caso in cui il software del wallet si sia bloccato o lo smartphone abbia avuto problemi di qualsiasi genere.
+##### <span style="color:blue;">**blockchain.sync()**</span>:
+
+Ricerca nei nuovi blocchi transazioni in cui sia presente l'address dell'utente. Nei prossimi paragrafi spiegherò nel dettaglio il funzionamento delle funzioni che si interfacciano con la blockchain Ethereum. Per il momento basti sapere che nella nostra POA, generalmente, ciascun blocco viene generato ogni 15 secondi, quindi questa funzione viene richiamata ogni 7 secondi secondo la formula seguente:
+
+- (T2 - T1) / E dove
+  - t2-t1 è l'intervallo di tempo di 15 secondi
+  - E è il numero di eventi certi che desideriamo accadano
+  - Quindi abbiamo (15 - 0) / 2 = 7,5 arrotondata a 7 secondi
+
+##### <span style="color:blue;">**blockchain.scanForNew()**</span>:
+
+Cerca nel db eventuali transazioni nello stato "**new**" e, nel caso in cui è presente la txhash (hash della transazione), verifica sulla blockchain lo stato della stessa aggiornando di conseguenza il db. Nel caso in cui la txhash è vuota la transazione viene segnalata come "<span style="color:red;">**failed**</span>". In pratica questa funzione agisce da "resume" nel caso in cui il software del wallet si sia bloccato o lo smartphone abbia avuto problemi di qualsiasi genere.
 
 
 <div style="page-break-after: always;"></div>
 
 #### Funzione erc20.Balance
 
-file: `*protected/controllers/WalletERC20Controller.php*`
+file: *`protected/controllers/WalletERC20Controller.php`*
 
-Con una chiamata ajax al server (<span style="color:red;">getBalance</span>) viene eseguita la connessione alla blockchain e caricato il bilancio token. Quindi vengono restituiti i valori in formato json e viene dinamicamente aggiornato il campo del balance.
+Con una chiamata ajax al server (<span style="color:brown;">**getBalance**</span>) viene eseguita la connessione alla blockchain e caricato il bilancio token. Quindi vengono restituiti i valori in formato json e viene dinamicamente aggiornato il campo del balance.
 
 ```php
 public function actionGetBalance(){
-	$my_address = $_POST['my_address'];
+  $my_address = $_POST['my_address'];
 
-	//carico le impostazioni dell'applicazione
-	$settings=Settings::load();
-	if ($settings === null){
-		echo CJSON::encode(array(
-			"error"=>'Errore: I parametri di configurazione Token non sono stati trovati',
-			"id"=>time()
-		));
-		exit;
-	}
-	self::setDecimals($settings->poa_decimals);
+  //carico le impostazioni dell'applicazione
+  $settings=Settings::load();
+  if ($settings === null){
+    echo CJSON::encode(array(
+      "error"=>'Error: Token configuration parameters were not found',
+      "id"=>time()
+    ));
+    exit;
+  }
+  self::setDecimals($settings->poa_decimals);
+  $poaNode = WebApp::getPoaNode();
+  if (!$poaNode){
+    $save = new Save;
+    $save->WriteLog('bolt','walletERC20','getBalance',"All Nodes are down.");
+  }else{
+    $web3 = new Web3($poaNode);
+    $contract = new Contract($web3->provider, $settings->poa_abi);
+    $utils = $web3->utils;
 
-	$poaNode = WebApp::getPoaNode();
-	if (!$poaNode){
-		$save = new Save;
-		$save->WriteLog('bolt','walletERC20','getBalance',"All Nodes are down.");
-	}else{
-		$web3 = new Web3($poaNode);
-		$contract = new Contract($web3->provider, $settings->poa_abi);
-		$utils = $web3->utils;
-
-		$contract->at($settings->poa_contractAddress)->call('balanceOf', $my_address, [
-        'from' => $my_address
-	    ], function ($err, $result) use ($contract, $utils) {
+    $contract->at($settings->poa_contractAddress)->call('balanceOf', $my_address, [
+          'from' => $my_address
+        ], function ($err, $result) use ($contract, $utils) {
           if ($err !== null) {
-              echo CJSON::encode(array(
-                  "error"=>$err->getMessage(),
-                  'id'=>time()
-              ));
-              exit;
+            echo CJSON::encode(array(
+              "error"=>$err->getMessage(),
+              'id'=>time()
+            ));
+            exit;
           }
           if (isset($result)) {
-              $value = $utils->fromWei($result[0]->value, 'ether');
-              $Value0 = (string) $value[0]->value;
-              $Value1 = (float) $value[1]->value / pow(10, self::getDecimals());
-              self::setbalance($Value0 + $Value1);
+            $value = $utils->fromWei($result[0]->value, 'ether');
+            $Value0 = (string) $value[0]->value;
+            $Value1 = (float) $value[1]->value / pow(10,self::getDecimals());
+            self::setbalance($Value0 + $Value1);
           }
-	    });
-	}
-	$send_json = array(
-		'balance' => self::getBalance(),
-		'id'=> $my_address,
-	);
+        }
+    );
+  }
+  $send_json = array(
+    'balance' => self::getBalance(),
+    'id'=> $my_address,
+  );
   echo CJSON::encode($send_json);
 }
 ```
@@ -421,51 +440,50 @@ public function actionGetBalance(){
 
 file: *`protected/controllers/WalletETHController.php*`
 
-Con una chiamata ajax al server (<span style="color:red;">getBalance</span>) viene eseguita la connessione alla blockchain e caricato il bilancio ethereum dell'address. Quindi vengono restituiti i valori in formato json, ma in questo caso non viene dinamicamente aggiornato il campo del balance in quanto invisibile. Il caricamento di questa informazione è necessaria nella POA dove bisogna possedere eth, cioè il gas per poter effettuare l'invio di transazioni token. Se il gas è 0, sempre tramite una chiamata Ajax al server, viene eseguita una funzione (<span style="color:red;">loadGAS</span>) che carica di 1 eth il wallet dell'utente. I parametri relativi al wallet sender sono configurabili nel menù impostazioni della webapp Napay esclusivamente da parte dell'amministratore.
+Con una chiamata ajax al server (<span style="color:red;">**getBalance**</span>) viene eseguita la connessione alla blockchain e caricato il bilancio ethereum dell'address. Quindi vengono restituiti i valori in formato json, ma in questo caso non viene dinamicamente aggiornato il campo del balance in quanto invisibile. Il caricamento di questa informazione è necessaria nella POA dove bisogna possedere eth, cioè il gas per poter effettuare l'invio di transazioni token. Se il gas è 0, sempre tramite una chiamata Ajax al server, viene eseguita una funzione (<span style="color:red;">**loadGAS**</span>) che carica di 1 eth il wallet dell'utente. I parametri relativi al wallet sender sono configurabili nel menù impostazioni della webapp Napay esclusivamente da parte dell'amministratore.
 
 **Nel caso di POA gas free, questa funzione deve essere disabilitata.**
 
 ```php
 public function actionGetBalance(){
-	$my_address = $_POST['my_address'];
+  $my_address = $_POST['my_address'];
 
-	//carico le impostazioni dell'applicazione
-	$settings=Settings::load();
-	if ($settings === null){
-		echo CJSON::encode(array(
-			"error"=>'Errore: I parametri di configurazione Token non sono stati trovati',
-			'id'=>time(),
-			'balance'=>0,
-		));
-		exit;
-	}
-	$poaNode = WebApp::getPoaNode();
-	if (!$poaNode){
-		$save = new Save;
-		$save->WriteLog('bolt','walletETH','getBalance',"All Nodes are down.");
-	}else{
-		$web3 = new Web3($poaNode);
-		$eth = $web3->eth;
-		$balance = 0;
-
+  //carico le impostazioni dell'applicazione
+  $settings=Settings::load();
+  if ($settings === null){
+    echo CJSON::encode(array(
+      "error"=>'Error: Token configuration parameters were not found',
+      'id'=>time(),
+      'balance'=>0,
+    ));
+  	exit;
+  }
+  $poaNode = WebApp::getPoaNode();
+  if (!$poaNode){
+    $save = new Save;
+    $save->WriteLog('bolt','walletETH','getBalance',"All Nodes are down.");
+  }else{
+    $web3 = new Web3($poaNode);
+    $eth = $web3->eth;
+    $balance = 0;
     // recupero il balance
-		$web3->eth->getBalance($my_address, function ($err, $balance){
-			if ($err !== null) {
-				echo CJSON::encode(array(
-					"error"=>$err->getMessage(),
-					'id'=>time(),
-					'balance'=>0,
-				));
-				exit;
-			}
-			self::setBalance($balance->toString());//imposto il balance globalmente
-		});
-	}
-	$send_json = array(
-		'balance' => self::getBalance(),
-		'id'=> $my_address,
+    $web3->eth->getBalance($my_address, function ($err, $balance) use ($balance){
+      if ($err !== null) {
+        echo CJSON::encode(array(
+          "error"=>$err->getMessage(),
+          'id'=>time(),
+          'balance'=>0,
+        ));
+        exit;
+      }
+      $balance = $balance->toString();
+    });
+  }
+  $send_json = array(
+    'balance' => $balance,
+    'id'=> $my_address,
 	);
-	echo CJSON::encode($send_json);
+  echo CJSON::encode($send_json);
 }
 ```
 
@@ -474,13 +492,13 @@ public function actionGetBalance(){
 
 #### Funzione blockchain.sync
 
-file: `*protected/controllers/BlockchainController.php*`
+file: *`protected/controllers/BlockchainController.php`*
 
-Questa funzione (<span style="color:red;">scanForTransactions</span>) cerca nella blockchain le transazioni relative al wallet address principale partendo dall'ultimo block number sincronizzato nel wallet. Una chiamata ajax invia al server la richiesta di ricerca ed attende la risposta dal server.
+Questa funzione (<span style="color:brown;">**scanForTransactions**</span>) cerca nella blockchain le transazioni relative al wallet address principale partendo dall'ultimo block number sincronizzato nel wallet. Una chiamata ajax invia al server la richiesta di ricerca ed attende la risposta dal server.
 
 La ricerca nel Controller avviene in questo modo:
 
-- Carica il blockNumber relativo al wallet da mysql nella tabella bolt_wallets
+- Carica il blockNumber relativo al wallet da mysql nella tabella **bolt_wallets**
 - Cerca nei blocchi successivi fino al valore *$maxBlocksToScan* (impostato nei settings della webapp a 500)
 - Se non trova nulla, aggiorna esclusivamente il Wallet al blocco sopraggiunto in db ed esce
 - Se trova una o più transazioni:
@@ -496,28 +514,28 @@ La risposta in formato json viene gestita in questo modo:
 
 - Viene visualizzata a video una nuova riga "new transaction" modificando il DOM della tabella transazioni
 - Viene predisposto invio messaggio Push
-- Se l'indirizzo di invio appartiene ad un Istituto iscritto nella webapp Napay, registro nel service worker (SW) l'evento <span style="color:green;">sync-alarm</span> per il countdown per l'allarme previsto per il Covid-19
-- Registro nel SW l'evento <span style="color:green;">sync-txPool</span>
+- Se l'indirizzo di invio appartiene ad un Istituto iscritto nella webapp Napay, registro nel service worker (SW) l'evento <span style="color:green;">**sync-alarm**</span> per il countdown per l'allarme previsto per il Covid-19
+- Registro nel SW l'evento <span style="color:green;">**sync-txPool**</span>
 
 
 
-La funzione <span style="color:blue;">backend.checkNotify</span> presente nel file `js_backend.php` intercetta la modifica nel db e:
+La funzione <span style="color:blue;">**backend.checkNotify()**</span> presente nel file *`js_backend.php`* intercetta la modifica nel db e:
 
 - Suona l'allarme
 - Visualizza notifica
 
 
 
-Il SW intercetta l'evento <span style="color:green;">sync-alarm</span> e alla scadenza del countdown:
+Il SW intercetta l'evento <span style="color:green;">**sync-alarm**</span> e alla scadenza del countdown:
 
 - Invia messaggio di allarme push
 - Salva nel db messaggio di notifica con il testo del messaggio predisposto per l'Istituto corrispondente
 
 
 
-Il SW intercetta l'evento di sincronizzazione <span style="color:green;">sync-txPool</span> e:
+Il SW intercetta l'evento di sincronizzazione <span style="color:green;">**sync-txPool**</span> e:
 
-- effettua la richiesta POST al server all'indirizzo <span style="color:red;">WalletERC20/checkTxPool</span>
+- effettua la richiesta POST al server all'indirizzo <span style="color:brown;">**WalletERC20/checkTxPool**</span>
 
   ```javascript
   // SINCRONIZZAZIONE RICEZIONE
@@ -548,7 +566,7 @@ Il SW intercetta l'evento di sincronizzazione <span style="color:green;">sync-tx
   }
   ```
 
-- Salva la risposta in formato json nella tabella `indexedDb` <span style="color:red;">np-txPool</span>. Gli stati possono essere:
+- Salva la risposta in formato json nella tabella `indexedDb` <span style="color:red;">**np-txPool**</span>. Gli stati possono essere:
 
   - New
   - Completed
@@ -556,54 +574,55 @@ Il SW intercetta l'evento di sincronizzazione <span style="color:green;">sync-tx
 
 
 
-Nel controller a seguito della chiamata alla funzione <span style="color:red;">WalletERC20/checkTxPool</span> vengono effettuate le operazioni seguenti:
+Nel controller a seguito della chiamata alla funzione <span style="color:brown;">**WalletERC20/checkTxPool**</span> vengono effettuate le operazioni seguenti:
 
 - Legge dal db la riga della transazione token
 
 - Restituisce la risposta in formato json
 
   ```php
+  <?php
   /**
-   * Questa funzione controlla lo stato della transazione token
-   * Viene interrogato dal SW dopo che è stato registrata la richiesta in 'sync-txPool'
-   * La risposta viene salvata in indexedDB dal SW
-   * @param POST
-   * @param integer id_token the ID of the model to be searched
-   * @return json
-   */
+  * Questa funzione controlla lo stato della transazione token
+  * Viene interrogato dal SW dopo che è stato registrata la richiesta in 'sync-txPool'
+  * La risposta viene salvata in indexedDB dal SW
+  * @param POST
+  * @param integer id_token the ID of the model to be searched
+  * @return json
+  */
   public function actionCheckTxpool(){
-      $model = $this->loadModel(crypt::Decrypt($_POST['id_token']));
-      $wallets = Wallets::model()->findByAttributes(['id_user'=>Yii::app()->user->objUser['id_user']]);
+  $model = $this->loadModel(crypt::Decrypt($_POST['id_token']));
+  $wallets = Wallets::model()->findByAttributes(['id_user'=>Yii::app()->user->objUser['id_user']]);
 
-      echo CJSON::encode(array(
-        'id' => time(), //NECESSARIO PER IL SALVATAGGIO IN  indexedDB quando ritorna al Service Worker
-        "status"=>$model->status,
-        "status_wlink"=>WebApp::translateMsg($model->status),
-        "openUrl"=>Yii::app()->createUrl('tokens/view',array('id'=>crypt::Encrypt($model->id_token))), // url per i messaggi push
-        'to_address'=>$model->to_address,
-        'from_address'=>$model->from_address,
-        'token_price'=>$model->token_price,
-        'token_price_wsymbol' => WebApp::typePrice($model->token_price,($model->from_address == $wallets->wallet_address ? 'sent' : 'received')),
-        'id_token'=>$_POST['id_token'],
-      ));
+  echo CJSON::encode(array(
+    'id' => time(), //NECESSARIO PER IL SALVATAGGIO IN  indexedDB quando ritorna al Service Worker
+    "status"=>$model->status,
+    "status_wlink"=>WebApp::translateMsg($model->status),
+    "openUrl"=>Yii::app()->createUrl('tokens/view',array('id'=>crypt::Encrypt($model->id_token))), // url per i messaggi push
+    'to_address'=>$model->to_address,
+    'from_address'=>$model->from_address,
+    'token_price'=>$model->token_price,
+    'token_price_wsymbol' => WebApp::typePrice($model->token_price,($model->from_address == $wallets->wallet_address ? 'sent' : 'received')),
+    'id_token'=>$_POST['id_token'],
+  ));
   }
   ```
 
 
 
-La funzione <span style="color:blue;">eth.isTxInIndexedDB</span> si occupa di leggere la tabella <span style="color:red;">np-txPool</span> predisposta dal SW tramite l'evento <span style="color:green;">sync-txPool</span> e reagisce a seconda dello stato della transazione. Solo se questa è diversa da "new" allora:
+La funzione <span style="color:blue;">**eth.isTxInIndexedDB()**</span> si occupa di leggere la tabella <span style="color:red;">**np-txPool**</span> predisposta dal SW tramite l'evento <span style="color:green;">**sync-txPool**</span> e reagisce a seconda dello stato della transazione. Solo se questa è diversa da "**new**" allora:
 
 - Se la tabella è vuota richiama se stessa ogni 50 msec
 
-- Altrimenti svuota la tabella <span style="color:red;">np-txPool</span>
+- Altrimenti svuota la tabella <span style="color:red;">**np-txPool**</span>
 
-- Chiama la funzione <span style="color:blue;">eth.responseTxPool</span> che:
+- Chiama la funzione <span style="color:blue;">**eth.responseTxPool()**</span> che:
 
   - Modifica nel DOM la riga relativa alla transazione aggiornando il contenuto della transazione
 
   - Predispone l'invio della notifica push
 
-  - Aggiorna il bilancio del wallet richiamando la funzione <span style="color:blue;">erc20.Balance</span>
+  - Aggiorna il bilancio del wallet richiamando la funzione <span style="color:blue;">**erc20.Balance()**</span>
 
     ```javascript
     // verifica che ci siano transaz. in indexedDB
@@ -646,32 +665,38 @@ La funzione <span style="color:blue;">eth.isTxInIndexedDB</span> si occupa di le
 
 <div style="page-break-after: always;"></div>
 
+##### blockchain.sync Workflow
+
+![img](blockchain.sync.png)
+
+<div style="page-break-after: always;"></div>
+
 #### Servizio WT (watch tower)
 
-file: `protected/commands/wtCommand.php`
+file: *`protected/commands/wtCommand.php`*
 
 Un discorso a parte è previsto per il servizio WT watch tower o Torre di guardia. Questo servizio è eseguita in maniera indipendente sul server ed è una funzione php trasformata in un vero e proprio servizio Linux.
 
-La sua funzione è quella di monitorare le transazioni all'interno dei singoli blocchi e laddove queste non fossero aggiornate all'interno del db della webapp, provvede ad effettuare gli aggiornamenti.
+La sua funzione è quella di monitorare le transazioni all'interno dei singoli blocchi e laddove queste non fossero aggiornate all'interno del db della webapp, provvede ad effettuare gli aggiornamenti e ad inviare notifiche push a chi ***riceve*** Token, mentre l'applicazione non è aperta sullo smartphone.
 
 Questo rende possibile poter, ad esempio, chiudere immediatamente il wallet subito dopo aver inviato dei token. La chiusura del wallet potrebbe anche avvenire per un guasto dello smartphone o perché si è scaricata la batteria.
 
-Abbiamo visto che quando entro nel wallet la funzione <span style="color:blue;">blockchain.sync</span> verifica l'ultimo blocco in cui è stato utilizzato e da quello parte alla ricerca di transazioni legate all'address relativo. Nel caso di arresto improvviso del telefono subito dopo la fase di invio token, questo potrebbe rendere non congruente il saldo token con la lista di transazioni del wallet. Il WT evita che questo accada. Scrive in un registro log (leggibile dall'amministratore in Napay) tutte le operazioni effettuate e le transazioni trovate ed aggiorna il db in maniera indipendente dal wallet. Alla sua riattivazione dopo un blocco il wallet potrà visualizzare le informazioni corrette perché queste saranno state portate a termine dal WT e non dal Javascript del wallet.
+Abbiamo visto che quando effettuo il login nel wallet una tra le prime funzioni ad essere richiamate è <span style="color:blue;">**blockchain.sync()**</span>, che verifica l'ultimo blocco in cui è stato utilizzato e da quello parte alla ricerca di transazioni legate all'address dell'utente. Nel caso di arresto improvviso del telefono subito dopo la fase di invio token, questo potrebbe rendere non congruente il saldo token con la lista di transazioni del wallet. Il WT evita che questo accada. Scrive in un registro log (leggibile dall'amministratore in Napay) tutte le operazioni effettuate e le transazioni trovate ed aggiorna il db in maniera indipendente dal wallet. Alla sua riattivazione dopo un blocco il wallet potrà visualizzare le informazioni corrette perché queste saranno state portate a termine dal WT e non dal Javascript del wallet.
 
 
 <div style="page-break-after: always;"></div>
 
 #### Funzione erc20.Send
 
-file: *`protected/controllers/WalletERC20Controller.php*`
+file: *`protected/controllers/WalletERC20Controller.php`*
 
-Questa funzione (<span style="color:brown;">*send*</span>) invia ad un indirizzo specificato il numero di token indicati nella pagina form di inserimento dati.
+Questa funzione (<span style="color:brown;">**send**</span>) invia ad un indirizzo specificato il numero di token indicati nella pagina form di inserimento dati.
 
-Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blue;">erc20.send</span> verifica che:
+Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blue;">**erc20.send()**</span> verifica che:
 
 - l'importo da inviare sia inferiore o uguale al saldo token
 
-- l'indirizzo di ricezione sia un indirizzo valido. Uno storico di indirizzi verificati viene salvato nella tabella di `indexedDb` <span style="color:red;">np_checkaddress</span> per velocizzare il processo di verifica. Altrimenti viene effettuata una richiesta ajax che verifica la correttezza dell'indirizzo
+- l'indirizzo di ricezione sia un indirizzo valido. Uno storico di indirizzi verificati viene salvato nella tabella di `indexedDb` <span style="color:red;">**np_checkaddress**</span> per velocizzare il processo di verifica. Altrimenti viene effettuata una richiesta ajax che verifica la correttezza dell'indirizzo
 
   ```javascript
   var isAddressChecked = false;
@@ -726,9 +751,9 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
     url:'{$urlEstimateGas}',
     type: "POST",
     data:{
-      'from'		: $('#WalletTokenForm_from').val(),
-      'to'		: $('#WalletTokenForm_to').val(),
-      'amount'	: $('#WalletTokenForm_amount').val(),
+      'from'  : $('#WalletTokenForm_from').val(),
+      'to'    : $('#WalletTokenForm_to').val(),
+      'amount': $('#WalletTokenForm_amount').val(),
     },
     dataType: "json",
     success:function(data){
@@ -741,20 +766,20 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
   });
   ```
 
-- Legge la private key e la password criptate da `indexedDb` dalla tabella <span style="color:red;">wallet</span>
+- Legge la private key e la password criptate da `indexedDb` dalla tabella <span style="color:red;">**wallet**</span>
 
-- Scrive nella tabella <span style="color:red;">sync-send-erc20</span> la private key e la password e tutti gli altri parametri POST
+- Scrive nella tabella <span style="color:red;">**sync-send-erc20**</span> la private key e la password e tutti gli altri parametri **POST**
 
-- Registra nel SW l'evento <span style="color:green;">sync-send-erc20</span>
+- Registra nel SW l'evento <span style="color:green;">**sync-send-erc20**</span>
 
-- Chiama la funzione <span style="color:blue;">eth.isReadySent</span>
+- Chiama la funzione <span style="color:blue;">**eth.isReadySent()**</span>
 
-- Ripristina la schermata principale del wallet ed inizializza le variabili allo stato nativo tramite <span style="color:blue;">updateconfirmMask</span>
+- Ripristina la schermata principale del wallet ed inizializza le variabili allo stato nativo tramite <span style="color:blue;">**updateconfirmMask()**</span>
 
 
-##### La funzione <span style="color:blue;">eth.isReadySent</span>:
+##### La funzione <span style="color:blue;">**eth.isReadySent()**</span>:
 
-- legge la tabella <span style="color:red;">np-send-erc20</span> predisposta dal SW che avrà intercettato l'evento <span style="color:green;">sync-send-erc20</span> spiegato più avanti
+- legge la tabella <span style="color:red;">**np-send-erc20**</span> predisposta dal SW che avrà intercettato l'evento <span style="color:green;">**sync-send-erc20**</span> spiegato più avanti
 
 - Se la tabella è vuota la funzione auto-richiama se stessa ogni 500 msec
 
@@ -788,23 +813,23 @@ Prima di eseguire la chiamata ajax al server, la funzione <span style="color:blu
   },
   ```
 
-- Esegue una chiamata alla funzione <span style="color:blue;">eth.txFound</span>
+- Esegue una chiamata alla funzione <span style="color:blue;">**eth.txFound()**</span>
 
-- Svuota il contenuto della tabella `indexedDb` <span style="color:red;">np-send-erc20</span>
-
-
-##### La funzione <span style="color:blue;">eth.txFound</span>:
-
-- Scrive nella tabella `IndexedDb` <span style="color:red;">sync-txPool</span> l'id della transazione
-- Registra nel SW l'evento di sincronizzazione <span style="color:green;">sync-txPool</span> che abbiamo già spiegato nella funzione <span style="color:blue;">blockchain.sync</span>
-- Chiama la funzione <span style="color:blue;">eth.isTxInIndexedDB</span> che abbiamo già spiegato nella funzione <span style="color:blue;">blockchain.sync</span>
+- Svuota il contenuto della tabella `indexedDb` <span style="color:red;">**np-send-erc20**</span>
 
 
+##### La funzione <span style="color:blue;">eth.txFound()</span>:
 
-Il SW intercetta l'evento di sincronizzazione <span style="color:green;">sync-send-erc20</span> e:
+- Scrive nella tabella `IndexedDb` <span style="color:red;">**sync-txPool**</span> l'id della transazione
+- Registra nel SW l'evento di sincronizzazione <span style="color:green;">**sync-txPool**</span> che abbiamo già spiegato nella funzione <span style="color:blue;">**blockchain.sync()**</span>
+- Chiama la funzione <span style="color:blue;">**eth.isTxInIndexedDB()**</span> che abbiamo già spiegato nella funzione <span style="color:blue;">**blockchain.sync()**</span>
 
-- effettua la richiesta POST al server all'indirizzo <span style="color:brown;">WalletERC20/send</span>
-- Salva il contenuto in formato json nella tabella `indexedDb` <span style="color:red;">np-send-erc20</span>
+
+
+Il SW intercetta l'evento di sincronizzazione <span style="color:green;">**sync-send-erc20**</span> e:
+
+- effettua la richiesta POST al server all'indirizzo <span style="color:brown;">**WalletERC20/send**</span>
+- Salva il contenuto in formato json nella tabella `indexedDb` <span style="color:red;">**np-send-erc20**</span>
 
 ```javascript
 // SINCRONIZZAZIONE INVIO
@@ -844,7 +869,7 @@ if (event.tag === 'sync-send-erc20') {
 
 
 
-Nel controller a seguito della chiamata alla funzione <span style="color:brown;">WalletERC20/send</span> vengono effettuate le operazioni seguenti:
+Nel controller a seguito della chiamata alla funzione <span style="color:brown;">**WalletERC20/send**</span> vengono effettuate le operazioni seguenti:
 
 - Viene creata la transazione con smart contract
 - Viene firmata la transazione con i dati inviati via POST
@@ -857,7 +882,8 @@ Nel controller a seguito della chiamata alla funzione <span style="color:brown;"
 
 <div style="page-break-after: always;"></div>
 
-##### Workflow Send
+
+##### Send Workflow
 
 
 ![img](send-workflow.png)

@@ -71,3 +71,5 @@ Tutte le `“Web Application“` sono **PWA Ready**. Questo significa che si pos
 - [Manuale POS](docs/POSMANUAL.md)
 
 - [Manuale dell'Amministratore](docs/ADMINMANUAL.md)
+
+- [Manuale tecnico di Bolt Wallet](docs/Bolt-techManual.md)
