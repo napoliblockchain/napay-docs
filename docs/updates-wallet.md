@@ -1,5 +1,14 @@
 # Aggiornamenti
 
+
+------------------------------------------------
+#### 17.07.2020 - ALLINEAMENTO
+------------------------------------------------
+
+- 4660c6c little block time fix
+
+
+
 #### versione 1.3.1
 
     - generate auto-random password to crypt seed #79

@@ -1,11 +1,21 @@
 # Aggiornamenti
 
+
+------------------------------------------------
+#### 17.07.2020 - ALLINEAMENTO
+------------------------------------------------
+
+- ce79cc3 Closing Institutes Management
+
+
+
+
 #### versione 1.3
 
 	**new features**
 	- #52 Napay: prorogare scadenza iscrizione al 28 febbraio
 	- #48 Napay: gestione/visualizzazione dei log delle applicazioni
-    - #32 Napay: mailing list ai soci x comunicazioni generiche
+  - #32 Napay: mailing list ai soci x comunicazioni generiche
 	- #28 Napay: Consensi: il socio deve poter modificare quello sul marketing
 
 	**fix**
