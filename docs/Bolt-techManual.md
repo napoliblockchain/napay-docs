@@ -387,7 +387,7 @@ Con una chiamata ajax al server (<span style="color:brown;">**getBalance**</span
 public function actionGetBalance(){
   $my_address = $_POST['my_address'];
 
-  //carico le impostazioni dell'applicazione
+  // carico le impostazioni dell'applicazione
   $settings=Settings::load();
   if ($settings === null){
     echo CJSON::encode(array(
@@ -438,7 +438,7 @@ public function actionGetBalance(){
 
 #### Funzione eth.Balance
 
-file: *`protected/controllers/WalletETHController.php*`
+file: *`protected/controllers/WalletETHController.php`*
 
 Con una chiamata ajax al server (<span style="color:red;">**getBalance**</span>) viene eseguita la connessione alla blockchain e caricato il bilancio ethereum dell'address. Quindi vengono restituiti i valori in formato json, ma in questo caso non viene dinamicamente aggiornato il campo del balance in quanto invisibile. Il caricamento di questa informazione è necessaria nella POA dove bisogna possedere eth, cioè il gas per poter effettuare l'invio di transazioni token. Se il gas è 0, sempre tramite una chiamata Ajax al server, viene eseguita una funzione (<span style="color:red;">**loadGAS**</span>) che carica di 1 eth il wallet dell'utente. I parametri relativi al wallet sender sono configurabili nel menù impostazioni della webapp Napay esclusivamente da parte dell'amministratore.
 
@@ -665,7 +665,7 @@ La funzione <span style="color:blue;">**eth.isTxInIndexedDB()**</span> si occupa
 
 <div style="page-break-after: always;"></div>
 
-##### blockchain.sync Workflow
+#### blockchain.sync() Workflow
 
 ![img](blockchain.sync.png)
 
