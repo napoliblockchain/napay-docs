@@ -2,7 +2,7 @@
 
 #### Repository
 
-- Source code: https://bitbucket.org/jambtc/bolt/src/master
+- Source code: https://github.com/napoliblockchain/bolt.git
 - Manuali utente: https://github.com/napoliblockchain/napay-docs
 
 #### Librerie esterne
