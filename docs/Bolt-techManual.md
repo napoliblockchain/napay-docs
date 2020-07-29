@@ -493,10 +493,18 @@ public function actionGetBalance(){
 #### Funzione blockchain.sync
 
 file: *`protected/controllers/BlockchainController.php`*
+file: *`protected/controllers/BackendController.php`*
+file: *`protected/controllers/WalletERC20Controller.php`*
+file: *`protected/controllers/views/layout/js_main.php`*
 
-Questa funzione (<span style="color:brown;">**scanForTransactions**</span>) cerca nella blockchain le transazioni relative al wallet address principale partendo dall'ultimo block number sincronizzato nel wallet. Una chiamata ajax invia al server la richiesta di ricerca ed attende la risposta dal server.
+Questa funzione ricerca nella blockchain le transazioni relative al wallet address dell'utente e mostra le relative notifiche.
+E' composta da 5 subfunzioni javascript, da 3 eventi Service worker e da 4 funzioni server php.
 
-La ricerca nel Controller avviene in questo modo:
+All'avvio del browser viene richiamata la funzione <span style="color:brown;">**getBlockNumber**</span> che restituisce in formato JSON l'altezza del blocco della blockchain e del wallet. Viene quindi valutata la differenza e se questa è maggiore di 0 si registra l'evento <span style="color:green;">**sync-blockchain**</span>
+
+Il service worker intercetta l'evento <span style="color:green;">**syncBlockchain**</span> cerca nella blockchain le transazioni relative al wallet address principale partendo dall'ultimo block number sincronizzato nel wallet. Una chiamata POST alla funzione <span style="color:brown;">**checkTransaction**</span> restituisce al SW la lista delle transazioni.
+
+La ricerca nel Controller che la funzione <span style="color:brown;">**checkTransaction**</span> esegue, avviene in questo modo:
 
 - Carica il blockNumber relativo al wallet da mysql nella tabella **bolt_wallets**
 - Cerca nei blocchi successivi fino al valore *$maxBlocksToScan* (impostato nei settings della webapp a 500)
