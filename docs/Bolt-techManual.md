@@ -493,18 +493,33 @@ public function actionGetBalance(){
 #### Funzione blockchain.sync
 
 file: *`protected/controllers/BlockchainController.php`*
+
 file: *`protected/controllers/BackendController.php`*
+
 file: *`protected/controllers/WalletERC20Controller.php`*
+
 file: *`protected/controllers/views/layout/js_main.php`*
+
 
 Questa funzione ricerca nella blockchain le transazioni relative al wallet address dell'utente e mostra le relative notifiche.
 E' composta da 5 subfunzioni javascript, da 3 eventi Service worker e da 4 funzioni server php.
 
-All'avvio del browser viene richiamata la funzione <span style="color:brown;">**getBlockNumber**</span> che restituisce in formato JSON l'altezza del blocco della blockchain e del wallet. Viene quindi valutata la differenza e se questa è maggiore di 0 si registra l'evento <span style="color:green;">**sync-blockchain**</span>
+All'avvio del browser viene richiamata la funzione <span style="color:brown;">**getBlockNumber**</span> che restituisce in formato JSON l'altezza del blocco della blockchain e del wallet. Viene quindi valutata la differenza e se questa è maggiore di 0 si registra l'evento <span style="color:green;">**sync-blockchain**</span> tramite una funzione <span style="color:blue;">**callRegisterSyncBlockchain()**</span> creata per risolvere un **bug** nel browser chrome per android che non gestisce la **Promise** nella chiamata ajax. Puntando ad una funzione esterna la Promise viene risolta correttamente. 
 
-Il service worker intercetta l'evento <span style="color:green;">**syncBlockchain**</span> cerca nella blockchain le transazioni relative al wallet address principale partendo dall'ultimo block number sincronizzato nel wallet. Una chiamata POST alla funzione <span style="color:brown;">**checkTransaction**</span> restituisce al SW la lista delle transazioni.
+Vediamo il codice:
+```javascript
+callRegisterSyncBlockchain: function (my_address){
+  		readAllData('sync-blockchain').then(function(data) {
+        navigator.serviceWorker.ready.then(function(sw) {
+          console.log('[blockchain: sync] event register:', data);
+          return sw.sync.register('sync-blockchain');
+        });
+ 			 })
+```
 
-La ricerca nel Controller che la funzione <span style="color:brown;">**checkTransaction**</span> esegue, avviene in questo modo:
+Il service worker intercetta l'evento <span style="color:green;">**syncBlockchain**</span> cerca nella blockchain le transazioni relative al wallet address principale partendo dall'ultimo block number sincronizzato nel wallet. Una chiamata POST alla funzione <span style="color:brown;">**syncBlockchain**</span> restituisce al SW la lista delle transazioni.
+
+La ricerca nel Controller che la funzione <span style="color:brown;">**syncBlockchain**</span> esegue, avviene in questo modo:
 
 - Carica il blockNumber relativo al wallet da mysql nella tabella **bolt_wallets**
 - Cerca nei blocchi successivi fino al valore *$maxBlocksToScan* (impostato nei settings della webapp a 500)
