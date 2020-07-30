@@ -12,7 +12,7 @@ A PWA TTS Wallet
 
 
 ## Authors
-    - [Sergio Casizzone](https://sergiocasizzone.it)
+- [Sergio Casizzone](https://sergiocasizzone.it)
 
 
 ## Features
@@ -57,7 +57,7 @@ If you discover or learn about a potential error, weakness, or threat that can c
 
 This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. See [LICENSE](LICENSE) for more information.
 
-[MIT](LICENSE) © TXLab
+[MIT](LICENSE) © napoliblockchain.it
 
 [issues]: https://bitbucket.org/jambtc/bolt/issues
 
@@ -83,6 +83,6 @@ This project is open source under the MIT license, which means you have full acc
 
 
 
-| Authors                     | Versione |
-| --------------------------- | -------- |
-| Made with ❤️ by **txlab.io** | 0.1.1   |
+| Authors                     | Version|
+| --------------------------- | ------ |
+| Made with ❤️ by **napoliblockchain.it** | |
